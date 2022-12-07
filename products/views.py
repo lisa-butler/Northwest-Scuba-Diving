@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .models import Product, Category
 
-# Create your views here.
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """ A view to show all products """
 
     products = Product.objects.all()
     query = None
@@ -35,3 +34,64 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def courses(request):
+
+    products = Product.objects.all()
+    query = None
+    categories = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+    context = {
+        'products': products,
+        'current_categories': categories,
+    }
+
+    return render(request, 'products/courses.html', context)
+
+
+def qualified(request):
+
+    products = Product.objects.all()
+    query = None
+    categories = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+    context = {
+        'products': products,
+        'current_categories': categories,
+    }
+
+    return render(request, 'products/qualified.html', context)
+
+
+def gear(request):
+
+    products = Product.objects.all()
+    query = None
+    categories = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+    context = {
+        'products': products,
+        'current_categories': categories,
+    }
+
+    return render(request, 'products/gear.html', context)
+
