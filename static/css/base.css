@@ -24,9 +24,6 @@ body {
     font-size: 4rem;
 }
 
-.main-logo-link {
-    width: fit-content;
-}
 
 .shop-now-button {
     background: black;
@@ -72,11 +69,23 @@ body {
     margin:0 auto;
     display: block;
     text-align: center;
+    width: 100%;
 }
 
 .navbar-nav > li {
     display: inline-block;
     float:none;
+    padding: 0;
+}
+
+.navbar {
+    display: inline;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /* -------------------------------- Media Queries */
