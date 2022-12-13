@@ -21,7 +21,9 @@ body {
 
 .logo-font {
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 5rem;
+    margin-top: 2rem;
+    color: teal;
 }
 
 
@@ -86,6 +88,14 @@ body {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.header {
+
+}
+
+.nav-link {
+    color: #000 !important;
 }
 
 /* -------------------------------- Media Queries */
