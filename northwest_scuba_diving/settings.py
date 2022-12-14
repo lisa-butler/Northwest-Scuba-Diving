@@ -83,10 +83,10 @@ TEMPLATES = [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ],
-            # 'libraries': {
-            #     'bag_tools': 'bag.templatetags.bag_tools',
+            'libraries': {
+                'bag_tools': 'bag.templatetags.bag_tools',
 
-            # }
+            }
 
         },
     },
