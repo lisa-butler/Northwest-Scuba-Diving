@@ -92,20 +92,25 @@ def checkout(request):
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
-        intent = stripe.checkout.Session.create(
-            line_items=[{
+
+        line_items_array = []
+        for item in current_bag['bag_items']:
+            line_items_array.append({
                 'price_data': {
                     'currency': settings.STRIPE_CURRENCY,
                     'product_data': {
-                        'name': 'T-shirt',
+                        'name': item['product'].name,
                     },
-                    'unit_amount': stripe_total,
+                    'unit_amount': int(item['product'].price),
                 },
-                'quantity': 1,
-                }],
+                'quantity': item['quantity']
+            })
+
+        intent = stripe.checkout.Session.create(
+            line_items=line_items_array,
             mode='payment',
-            success_url='http://localhost:8000/checkout/checkout_success.html',
-            cancel_url='http://localhost:8000/checkout/checkout.html',
+            success_url='https://8000-lisabutler-northwestscu-i70zq6u2qzl.ws-eu79.gitpod.io/checkout/checkout_success.html',
+            cancel_url='https://8000-lisabutler-northwestscu-i70zq6u2qzl.ws-eu79.gitpod.io/checkout/checkout.html',
         )
 
         order_form = OrderForm()
@@ -118,7 +123,7 @@ def checkout(request):
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        # 'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
