@@ -1,0 +1,1 @@
+web: gunicorn northwest_scuba_diving.wsgi:application
