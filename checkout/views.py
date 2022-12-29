@@ -99,6 +99,11 @@ def checkout(request):
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
 
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+
         line_items_array = []
         for item in current_bag['bag_items']:
             line_items_array.append({
@@ -112,7 +117,7 @@ def checkout(request):
                 'quantity': item['quantity']
             })
 
-        intent = stripe.checkout.Session.create(
+        checkout_intent = stripe.checkout.Session.create(
             line_items=line_items_array,
             mode='payment',
             success_url='https://8000-lisabutler-northwestscu-i70zq6u2qzl.ws-eu79.gitpod.io/checkout/checkout_success.html',
@@ -129,7 +134,7 @@ def checkout(request):
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        # 'client_secret': intent.client_secret,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
