@@ -167,3 +167,9 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def orders(request):
+
+    return render(request, 'products/orders.html')
