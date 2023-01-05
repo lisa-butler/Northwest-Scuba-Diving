@@ -323,6 +323,23 @@ footer {
     padding: 0;
     width: 33.33%;
     margin-left: 0;
+    display: inline-block;
+}
+
+#hero1 {
+    background: url('/media/diver_ascending.jpg') no-repeat center center;
+    background-size: cover;
+
+}
+
+#hero2 {
+    background: url('/media/diver_ascending.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#hero3 {
+    background: url('/media/diver_ascending.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 /* Container holding the image and the text */

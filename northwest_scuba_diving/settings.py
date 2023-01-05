@@ -93,6 +93,7 @@ TEMPLATES = [
             'libraries': {
                 'bag_tools': 'bag.templatetags.bag_tools',
 
+
             }
 
         },
