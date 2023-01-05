@@ -17,7 +17,7 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+                        <div class="product_card col-sm-8 col-md-8 col-lg-6 col-xl-6">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">

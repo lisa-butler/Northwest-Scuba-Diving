@@ -16,7 +16,7 @@
 <div class="card">
 
     <!--Section: Contact v.2-->
-    <section class="mb-4">
+    <section class="mb-4 card_contents">
 
         <!--Section description-->
         <p class="text-center w-responsive mx-auto mb-5">Drop us a message and we will get back in touch asap!</p>
@@ -79,8 +79,8 @@
 
                 </form>
 
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                <div class="text-center">
+                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();" href="{% url 'message_sent' %}">Send</a>
                 </div>
                 <div class="status"></div>
             </div>

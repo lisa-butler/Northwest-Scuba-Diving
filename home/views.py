@@ -18,3 +18,8 @@ def get_in_contact(request):
     """ A view to return the get_in_contact page """
 
     return render(request, 'home/get_in_contact.html')
+
+def message_sent(request):
+    """ A view to return the message_sent page """
+
+    return render(request, 'home/message_sent.html')

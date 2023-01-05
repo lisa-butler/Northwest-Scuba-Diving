@@ -1,5 +1,6 @@
 html {
     height: 100%;
+
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Acme', sans-serif;
+
 }
 
 /* from Bulma */
@@ -90,7 +92,9 @@ body {
     cursor: pointer;
 }
 
-.header {
+.product_card {
+    margin-bottom: 1rem;
+
 
 }
 
@@ -98,6 +102,8 @@ body {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+
+
   }
 
 /* On mouse-over, add a deeper shadow */
@@ -115,7 +121,8 @@ body {
 }
 
 footer {
-    height: 80px;
+    height: 2rem;
+    background-color: white;
 }
 
 .social-networks {
@@ -123,7 +130,7 @@ footer {
     display: flex;
     justify-content: space-around;
     margin-top: 4em;
-    margin-bottom: 2em;
+    margin-bottom: 0;
 }
 
 .social-networks > li {
@@ -137,6 +144,9 @@ footer {
     color: gray;
 }
 
+.card_contents {
+    margin: 1em;
+}
 
 
 /* ------------------------------- bootstrap toasts */
@@ -424,14 +434,14 @@ footer {
       }
 
       .header-container {
-          padding-top: 164px;
+          padding-top: 1rem;
       }
   }
 
   /* pad the top a bit when navbar is collapsed on mobile */
   @media (max-width: 991px) {
       .header-container {
-          padding-top: 116px;
+          padding-top: 1rem;
       }
 
       body {
