@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, get_all_objects
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from checkout.models import Order, UserProfile
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -171,5 +173,8 @@ def delete_product(request, product_id):
 
 @login_required
 def orders(request):
-
-    return render(request, 'products/orders.html')
+    orders = get_all_objects(Order)
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'products/orders.html', context)
