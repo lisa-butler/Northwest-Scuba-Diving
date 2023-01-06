@@ -23,3 +23,9 @@ def message_sent(request):
     """ A view to return the message_sent page """
 
     return render(request, 'home/message_sent.html')
+
+
+def newsletter_confirmation(request):
+    """ A view to return the newsletter_confirmation page """
+
+    return render(request, 'home/newsletter_confirmation.html')
