@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, get_all_objects
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -169,6 +169,11 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def get_all_objects(model):
+    queryset = model._meta.model.objects.all()
+    return queryset
 
 
 @login_required
