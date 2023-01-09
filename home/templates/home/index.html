@@ -8,16 +8,27 @@
     <div class="container">
         <div class="row">
             <div class="col-7 col-md-12 my-auto text-center">
-                <h1 class="display-4 text-black header">
+                <h1 class="display-4 header">
                     Welcome to NorthWest Scuba Diving
                 </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Dive In!</a>
-                    </h4>
-                </div>
             </div>
         </div>
+        <div class="row d-flex justify-content-around">
+            <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
+                <h3 class="textbox">Our Courses</h3>
+                <p class="infpara">New to scuba diving? Get started by exploring our courses!</p>
+                <a href="{% url 'courses' %}" class="btn btn-secondary button">
+                  Courses
+                </a>
+            </div>
+            <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
+                <h3 class="textbox">Go Diving</h3>
+                <p class="infpara">Already scuba certified? Explore our diving options!</p>
+                <a href="{% url 'qualified' %}" class="btn btn-secondary button">
+                  Dives
+                </a>
+            </div>
+          </div>
         <section>
             <div class="hero-container img-fluid">
                 <div id="hero-images">
