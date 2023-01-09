@@ -12,6 +12,11 @@ body {
 
 }
 
+.header-main {
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -35,7 +40,7 @@ body {
 }
 
 .btn-black {
-    background: black;
+    background: teal;
     color: white;
 }
 
@@ -83,6 +88,11 @@ body {
 
 .navbar {
     display: inline;
+    padding: 0;
+}
+
+#main-nav {
+    padding: 0;
 }
 
 .btt-link,
@@ -113,6 +123,11 @@ body {
 
 .nav-link {
     color: #000 !important;
+}
+
+#product_name {
+    font-size:x-large;
+    font-weight: 400;
 }
 
 /*Header image*/
@@ -530,13 +545,13 @@ footer {
           font-size: .9rem;
       }
 
-      .btn.btn-outline-black.rounded-0,
-      .btn.btn-black.rounded-0 {
+      .btn.btn-outline-black.,
+      .btn.btn-black. {
           padding: .375rem .375rem;
       }
 
-      .btn.btn-outline-black.rounded-0.btn-lg,
-      .btn.btn-black.rounded-0.btn-lg {
+      .btn.btn-outline-black..btn-lg,
+      .btn.btn-black..btn-lg {
           padding: .375rem .375rem;
           font-size: .75rem;
       }
