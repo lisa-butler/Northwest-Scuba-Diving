@@ -19,7 +19,7 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     diver_grade = models.CharField(max_length=20, null=True, blank=True)
     diver_age = models.CharField(max_length=20, null=True, blank=True)
-    other_qualifications = models.CharField(max_length=20, null=True, blank=True)
+    other_qualifications = models.CharField(max_length=40, null=True, blank=True)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)

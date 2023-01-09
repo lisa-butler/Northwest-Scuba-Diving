@@ -9,15 +9,20 @@
 <h2 class="mb-4">{% trans "Sign Up" %}</h2>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="btn btn-outline-black" href="{% url 'account_login' %}">Back to Login</a>
-  <button type="submit">{% trans "Sign Up" %}</button>
-</form>
-
+<div class="row w-100">
+  <div class="col-md-2"></div>
+  <div class="card col-md-8">
+    <section class="mb-4 card_contents">
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="btn btn-outline-black" href="{% url 'account_login' %}">Back to Login</a>
+        <button type="submit">{% trans "Sign Up" %}</button>
+      </form>
+    </section>
+  </div>
+  <div class="col-md-2"></div>
 {% endblock %}

@@ -72,24 +72,10 @@ form.addEventListener('submit', function(ev) {
                     name: $.trim(form.full_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
-                    info:{
-                        line1: $.trim(form.diver_grade.value),
-                        line2: $.trim(form.diver_age.value),
-                        line3: $.trim(form.other_qualifications.value),
-                        country: $.trim(form.country.value),
-                    }
+
                 }
             },
-            diver: {
-                name: $.trim(form.full_name.value),
-                phone: $.trim(form.phone_number.value),
-                info: {
-                    line1: $.trim(form.diver_grade.value),
-                    line2: $.trim(form.diver_age.value),
-                    line3: $.trim(form.other_qualifications.value),
-                    country: $.trim(form.country.value),
-                }
-            },
+
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');

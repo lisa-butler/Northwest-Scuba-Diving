@@ -275,6 +275,8 @@ footer {
     overflow-y: auto;
 }
 
+
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -321,7 +323,7 @@ footer {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
 	color: #fff;
-    background-color: #222;
+    /* background-color: #222; */
     border-color: #222;
 }
 
@@ -405,6 +407,10 @@ footer {
 .hero-container {
     position: relative;
     margin-top: 1em;
+}
+
+.account_header {
+    color: teal;
 }
 
 /* -------------------------------- Media Queries */
