@@ -51,13 +51,13 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        shipping_details = intent.shipping
+        diver_details = intent.diver
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # Clean data in the shipping details
-        for field, value in shipping_details.address.items():
+        # Clean data in the diver details
+        for field, value in diver_details.info.items():
             if value == "":
-                shipping_details.address[field] = None
+                diver_details.info[field] = None
 
         # Update profile information if save_info was checked
         profile = None
@@ -65,13 +65,11 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_phone_number = shipping_details.phone
-                profile.default_country = shipping_details.address.country
-                profile.default_postcode = shipping_details.address.postal_code
-                profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
-                profile.default_county = shipping_details.address.state
+                profile.default_phone_number = diver_details.phone
+                profile.default_diver_grade = diver_details.info.diver_grade
+                profile.default_diver_age = diver_details.info.diver_age
+                profile.default_other_qualifications = diver_details.info.other_qualifications
+                profile.default_country = diver_details.address.country
                 profile.save()
 
         order_exists = False
@@ -79,15 +77,14 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=shipping_details.name,
+                    full_name__iexact=diver_details.name,
                     email__iexact=billing_details.email,
-                    phone_number__iexact=shipping_details.phone,
-                    country__iexact=shipping_details.address.country,
-                    postcode__iexact=shipping_details.address.postal_code,
-                    town_or_city__iexact=shipping_details.address.city,
-                    street_address1__iexact=shipping_details.address.line1,
-                    street_address2__iexact=shipping_details.address.line2,
-                    county__iexact=shipping_details.address.state,
+                    phone_number__iexact=diver_details.phone,
+                    diver_grade__iexact=diver_details.info.diver_grade,
+                    diver_age__iexact=diver_details.info.diver_age,
+                    other_qualifications__iexact=diver_details.info.other_qualifications,
+                    country__iexact=diver_details.info.country,
+
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -106,16 +103,11 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    full_name=shipping_details.name,
+                    full_name=diver_details.name,
                     user_profile=profile,
                     email=billing_details.email,
-                    phone_number=shipping_details.phone,
-                    country=shipping_details.address.country,
-                    postcode=shipping_details.address.postal_code,
-                    town_or_city=shipping_details.address.city,
-                    street_address1=shipping_details.address.line1,
-                    street_address2=shipping_details.address.line2,
-                    county=shipping_details.address.state,
+                    phone_number=diver_details.phone,
+                    country=diver_details.address.country,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
