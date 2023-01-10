@@ -26,6 +26,10 @@ body {
     margin-top: 1em;
 
 }
+
+#contact_form_card {
+    margin: 0;
+}
 /* from Bulma */
 .icon {
     align-items: center;
