@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from .forms import ContactForm
 from .models import Contact
 from django.contrib import messages
-
 
 
 def contact(request):
@@ -13,15 +12,14 @@ def contact(request):
                 'email': request.POST.get('email'),
                 'subject': request.POST.get('subject'),
                 'message': request.POST.get('message'),
-
             }
         contact_form = ContactForm(form_data)
         if contact_form.is_valid():
             contactRequest = contact_form.save(commit=False)
             contactRequest.save()
 
-            request.session['save_contact_request'] = 'save-contact-request' in request.POST
-            return redirect(reverse('contact_request_success', args=[contact_form.subject]))
+            request.session['save_contact_request'] = 'save_contact_request' in request.POST
+            return redirect(reverse('contact_request_success', args=[contactRequest.ticket_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -31,12 +29,12 @@ def contact(request):
         return render(request, 'contact/contact.html', context)
 
 
-def contact_request_success(request, subject):
+def contact_request_success(request, ticket_number):
     """
     Handle successful contact requests
     """
     save_contact_request = request.session.get('save_contact_request')
-    contact = get_object_or_404(Contact, subject=subject)
+    contact = get_object_or_404(Contact, ticket_number=ticket_number)
 
     if request.user.is_authenticated:
         if save_contact_request:
@@ -45,14 +43,13 @@ def contact_request_success(request, subject):
                 'email': contact.email,
                 'subject': contact.subject,
                 'message': contact.message,
-
             }
             contact_form = ContactForm(contact_form_data, instance=contact)
             if contact_form.is_valid():
                 contact_form.save()
 
     messages.success(request, f'Message successfully sent! \
-        Your message about {subject} has been sent. We will respond to {contact.email}.')
+        Your message about {contact.subject} has been sent. We will respond to {contact.email}.')
 
     template = 'contact/contact_request_success.html'
     context = {
