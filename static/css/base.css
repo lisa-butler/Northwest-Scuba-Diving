@@ -13,8 +13,8 @@ body {
 }
 
 .header-main {
-    margin-bottom: 5rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 /* from Bulma */
@@ -387,7 +387,7 @@ footer {
 }
 
 #hero1 {
-    background: url('/media/diver_ascending.jpg') no-repeat center center;
+    background: url('/media/dusty4.jpg') no-repeat center center;
     background-size: cover;
 
 }
@@ -398,7 +398,7 @@ footer {
 }
 
 #hero3 {
-    background: url('/media/diver_ascending.jpg') no-repeat center center;
+    background: url('/media/jellyfish.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -407,10 +407,15 @@ footer {
 .hero-container {
     position: relative;
     margin-top: 1em;
+    margin-bottom: 2em;
 }
 
 .account_header {
     color: teal;
+}
+
+#contact_card {
+    margin-top: 2em;
 }
 
 /* -------------------------------- Media Queries */

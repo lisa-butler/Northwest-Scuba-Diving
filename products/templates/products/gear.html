@@ -13,6 +13,13 @@
             </div>
         </div>
         <div class="row">
+            <div class="col text-center mt-3">
+                <hr>
+                <h2>Need to rent some gear or have a bottle filled? We have you covered!</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
@@ -48,22 +55,19 @@
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
+
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
+                            <div class="col-12 d-none d-xl-none mb-5">
                             </div>
                         {% endif %}
                     {% endfor %}

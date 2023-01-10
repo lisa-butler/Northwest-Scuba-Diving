@@ -1,11 +1,12 @@
 from django import forms
-from .models import UserProfile
+from .models import UserReviewForm
 
 
-class UserProfileForm(forms.ModelForm):
+class UserReviewForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        exclude = ('user',)
+        model = UserReviewForm
+        fields = ('title', 'review', 'user',)
+
 
     def __init__(self, *args, **kwargs):
         """
@@ -14,19 +15,18 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'default_phone_number': 'Phone Number',
-            'default_diver_grade': 'Diver Grade',
-            'default_diver_age': 'Diver Age',
-            'default_other_qualifications': 'Other Diving Qualifications',
+            'title': 'Review Title',
+            'review': 'Review',
+            'user': 'Username',
+            'created': 'Date of Review',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'default_country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black profile-form-input'
             self.fields[field].label = False

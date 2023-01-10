@@ -13,6 +13,13 @@
             </div>
         </div>
         <div class="row">
+            <div class="col text-center mt-3">
+                <hr>
+                <h2>Interested in learning to dive? We offer everything you need to become scuba certified. From Try a Dive to Rescue diver certification, our dive school can see you through your scuba journey!</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
@@ -49,22 +56,18 @@
 
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                             </div>
                         {% endif %}
                     {% endfor %}

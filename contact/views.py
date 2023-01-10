@@ -4,12 +4,15 @@ from .models import Contact
 from django.contrib import messages
 
 
+
 def contact(request):
     """ A view to return the contact page """
     if request.method == 'POST':
         form_data = {
                 'first_name': request.POST.get('first_name'),
                 'email': request.POST.get('email'),
+                'subject': request.POST.get('subject'),
+                'message': request.POST.get('message'),
 
             }
         contact_form = ContactForm(form_data)
@@ -18,7 +21,7 @@ def contact(request):
             contactRequest.save()
 
             request.session['save_contact_request'] = 'save-contact-request' in request.POST
-            return redirect(reverse('contact_request_success', args=[contact.subject]))
+            return redirect(reverse('contact_request_success', args=[contact_form.subject]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -51,7 +54,7 @@ def contact_request_success(request, subject):
     messages.success(request, f'Message successfully sent! \
         Your message about {subject} has been sent. We will respond to {contact.email}.')
 
-    template = 'contact/contact_success.html'
+    template = 'contact/contact_request_success.html'
     context = {
         'contact': contact,
     }

@@ -5,38 +5,58 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-7 col-md-12 my-auto text-center">
-                <h1 class="display-4 header-main">
-                    Welcome to NorthWest Scuba Diving
-                </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-7 col-md-12 my-auto text-center">
+            <h1 class="display-4 header-main">
+                Welcome to NorthWest Scuba Diving
+            </h1>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-around">
+        <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
+            <h3 class="textbox">Our Courses</h3>
+            <p class="infpara">New to scuba diving? Get started by exploring our courses!</p>
+            <a href="{% url 'courses' %}" class="btn btn-secondary button">
+                Courses
+            </a>
+        </div>
+        <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
+            <h3 class="textbox">Go Diving</h3>
+            <p class="infpara">Already scuba certified? Explore our diving options!</p>
+            <a href="{% url 'qualified' %}" class="btn btn-secondary button">
+                Dives
+            </a>
+        </div>
+    </div>
+    <section>
+        <div class="hero-container img-fluid">
+            <div id="hero-images">
+                <div alt="Diver with Dolphin" class="hero" id="hero1"></div>
+                <div alt="Diver with Dolphin" class="hero" id="hero2"></div>
+                <div alt="Diver with Dolphin" class="hero" id="hero3"></div>
             </div>
         </div>
-        <div class="row d-flex justify-content-around">
-            <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
-                <h3 class="textbox">Our Courses</h3>
-                <p class="infpara">New to scuba diving? Get started by exploring our courses!</p>
-                <a href="{% url 'courses' %}" class="btn btn-secondary button">
-                  Courses
-                </a>
-            </div>
-            <div class='card box col-12 col-md-5 mb-3 py-5 text-center'>
-                <h3 class="textbox">Go Diving</h3>
-                <p class="infpara">Already scuba certified? Explore our diving options!</p>
-                <a href="{% url 'qualified' %}" class="btn btn-secondary button">
-                  Dives
-                </a>
-            </div>
-          </div>
-        <section>
-            <div class="hero-container img-fluid">
-                <div id="hero-images">
-                    <div alt="Diver with Dolphin" class="hero" id="hero1"></div>
-                    <div alt="Diver with Dolphin" class="hero" id="hero2"></div>
-                    <div alt="Diver with Dolphin" class="hero" id="hero3"></div>
-                </div>
-            </div>
-          </section>
+    </section>
+    <div class="row">
+        <div class="col-7 col-md-12 my-auto text-center">
+            <h3>
+                NorthWest Scuba Diving was established in 2020 on the beautiful northwest coast of Ireland. The 5 star
+                dive center is located in Mullaghmore, Co.Sligo and is perfectly positioned for divers to experience the
+                beautiful underwater world of the North-West Atlantic.
+            </h3>
+        </div>
     </div>
+    <div class="row w-100">
+        <div class="col-md-2"></div>
+        <div class='card box col-md-8 mb-3 py-5 text-center' id='contact_card'>
+            <h3 class="textbox">Get in Touch</h3>
+            <p class="infpara">If you have a question or would like some more information, please get in touch!</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary button">
+                Contact Us!
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
 {% endblock %}
