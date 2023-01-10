@@ -5,14 +5,12 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
-
-<h2 class="mb-4">{% trans "Sign Up" %}</h2>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 <div class="row w-100">
   <div class="col-md-2"></div>
   <div class="card col-md-8">
     <section class="mb-4 card_contents">
+      <h2 class="mb-4">{% trans "Sign Up" %}</h2>
+      <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form|crispy }}
