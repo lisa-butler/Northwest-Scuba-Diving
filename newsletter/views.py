@@ -1,9 +1,13 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse, get_all_objects
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from .forms import NewsletterSignupForm
 from .models import Newsletter
 from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib import messages
+
+def get_all_objects(model):
+    queryset = model._meta.model.objects.all()
+    return queryset
 
 
 def newsletter(request):
