@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 
 
 class UserReviewForm(models.Model):
@@ -10,3 +11,12 @@ class UserReviewForm(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        username = None
+        for key, value in kwargs.items():
+            if key == "username":
+                username = value
+        loggedInUser = get_object_or_404(User, username=username)
+        self.user = loggedInUser
+        super().save()

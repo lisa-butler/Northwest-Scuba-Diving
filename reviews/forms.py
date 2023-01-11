@@ -5,7 +5,7 @@ from .models import UserReviewForm
 class Review(forms.ModelForm):
     class Meta:
         model = UserReviewForm
-        fields = ('title', 'review', 'user',)
+        fields = ('title', 'review')
 
 
     def __init__(self, *args, **kwargs):
@@ -17,8 +17,7 @@ class Review(forms.ModelForm):
         placeholders = {
             'title': 'Review Title',
             'review': 'Review',
-            'user': 'Username',
-            'created': 'Date of Review',
+
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
