@@ -429,6 +429,12 @@ footer {
 
 #contact_card {
     margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+#news_link {
+    padding-bottom: 0;
+    padding-top: 1em ;
 }
 
 /* -------------------------------- Media Queries */

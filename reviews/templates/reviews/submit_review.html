@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h1 class="display-4 header">Reviews</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Write a review</p>
+                <form action="{% url 'reviews' %}" method="POST" id="user_review_form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-black px-2 w-auto">Review</legend>
+                        {{ user_review_form.title | as_crispy_field }}
+                        {{ user_review_form.review | as_crispy_field }}
+                        {{ user_review_form.user | as_crispy_field }}
+                        {{ user_review_form.created | as_crispy_field }}
+                    </fieldset>
+                    <button type="submit">
+                        <a href="{% url 'contact_request_success' %}" class="btn btn-outline-black">Submit Review</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -2,7 +2,7 @@ from django import forms
 from .models import UserReviewForm
 
 
-class UserReviewForm(forms.ModelForm):
+class Review(forms.ModelForm):
     class Meta:
         model = UserReviewForm
         fields = ('title', 'review', 'user',)
