@@ -41,22 +41,24 @@
   </head>
   <body>
     <header class="container-fluid">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-12 my-auto py-1 py-lg-0 text-center text-center">
+        <div id="topnav" class="row bg-white pt-lg-2">
+            <div class="col-12 col-lg-12 my-auto text-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font">NorthWest Scuba Diving</h2>
                 </a>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4 text-center" id="center-about">
-                <div id="circle-container">
-                    <div alt="Cartoon Scuba Diver Mask" class="img-fluid" id="circle-cover-image"></div>
+            <div class="row w-100 m-0">
+                <div class="col-md-4 col-sm-1"></div>
+                <div class="col-md-4 col-sm-10 text-center" id="center-about">
+                    <div id="circle-container">
+                        <div alt="Cartoon Scuba Diver Mask" class="img-fluid" id="circle-cover-image"></div>
+                    </div>
                 </div>
-              </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4 col-sm-1"></div>
+            </div>
             <div class="col-12 col-lg-12">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
+                <ul class="list-inline list-unstyled text-lg-right text-sm-right my-0" id="dropdown-list">
+                    <li class="list-inline-item dropdown m-0">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -97,7 +99,7 @@
             <div class="row bg-white w-100">
                 <nav class="navbar navbar-light text-center w-100">
 
-                    {% include 'includes/mobile_top_header.html' %}
+                    <!-- {% include 'includes/mobile_top_header.html' %} -->
                     {% include 'includes/main_nav.html' %}
                 </nav>
             </div>
