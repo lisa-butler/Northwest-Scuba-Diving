@@ -35,8 +35,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <div class="row">
   <div class="col-md-3"></div>
   <div class="card col-md-6">
-    <section class="mb-4 card_contents">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
+    <section class="mb-2 card_contents">
+      <form class="login mt-2" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
         {% if redirect_field_value %}

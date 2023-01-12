@@ -20,7 +20,7 @@
         </div>
         <div class="card">
             <div class="card_contents">
-                <div class="row w-100" id="order_conf_box">
+                <div class="row w-100 m-0 mb-3 mt-3">
                     <div class="col-12 col-lg-12">
                         <div class="order-confirmation-wrapper p-2 border">
                             <div class="row">
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="row">
-			<div class="col-12 col-lg-12 text-center">
+			<div class="col-12 col-lg-12 text-center mt-4">
                 {% if from_profile %}
                     <a href="{% url 'profile' %}" class="btn btn-black my-2">
                         <span class="icon mr-2">
@@ -164,7 +164,6 @@
                     </a>
                 {% else %}
                     <a href="{% url 'home' %}" class="btn btn-black my-2">
-
                         <span class="text-uppercase">Back to Home Page!</span>
                     </a>
                 {% endif %}
