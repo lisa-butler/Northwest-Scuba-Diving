@@ -118,8 +118,8 @@ def checkout(request):
         checkout_intent = stripe.checkout.Session.create(
             line_items=line_items_array,
             mode='payment',
-            success_url='https://8000-lisabutler-northwestscu-i70zq6u2qzl.ws-eu79.gitpod.io/checkout/checkout_success.html',
-            cancel_url='https://8000-lisabutler-northwestscu-i70zq6u2qzl.ws-eu79.gitpod.io/checkout/checkout.html',
+            success_url='{}checkout/checkout_success.html'.format(request.build_absolute_uri()),
+            cancel_url='{}checkout/checkout.html'.format(request.build_absolute_uri()),
         )
 
         order_form = OrderForm()

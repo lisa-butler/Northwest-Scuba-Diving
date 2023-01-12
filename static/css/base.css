@@ -147,6 +147,19 @@ body {
     font-weight: 400;
 }
 
+#order_conf_box {
+    margin: 0;
+}
+
+.review_content {
+    text-transform: capitalize;
+    color:#000;
+
+
+}
+
+
+
 /*Header image*/
 #circle-container {
     width: 12vw;
