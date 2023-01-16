@@ -51,7 +51,7 @@
                 <div class="col-md-4 col-sm-1"></div>
                 <div class="col-md-4 col-sm-10 text-center" id="center-about">
                     <div id="circle-container">
-                        <div alt="Cartoon Scuba Diver Mask" class="img-fluid" id="circle-cover-image"></div>
+                        <div class="img-fluid" id="circle-cover-image"></div>
                     </div>
                 </div>
             <div class="col-md-4 col-sm-1"></div>
@@ -130,13 +130,8 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
-    {% endblock %}
 
-  </body>
+
   <footer id="footer">
     <ul class="social-networks">
       <li>
@@ -157,5 +152,13 @@
       </li>
     </ul>
   </footer>
+
+  {% block postloadjs %}
+  <script>
+      $('.toast').toast('show');
+  </script>
+  {% endblock %}
+
+</body>
 
 </html>

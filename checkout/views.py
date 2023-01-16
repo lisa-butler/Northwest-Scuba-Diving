@@ -122,7 +122,22 @@ def checkout(request):
             cancel_url='{}checkout/checkout.html'.format(request.build_absolute_uri()),
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'diver_grade': profile.default_diver_grade,
+                    'diver_age': profile.default_diver_age,
+                    'other_qualifications': profile.default_other_qualifications,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
