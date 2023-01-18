@@ -521,8 +521,10 @@ footer {
 @media screen and (max-width: 1200px) and (min-width: 990px) {
 
 }
-/*For medium screen sizes from 990px wide to 800px wide*/
-@media screen and (max-width: 990px) and (min-width: 800px) {
+/*For medium screen sizes from 1000px wide to 500px wide*/
+@media screen and (max-width: 1000px) and (min-width: 500px) {
+
+
 }
     *For medium to small screenn sizes 800px to 600px*/
 @media screen and (max-width: 800px) and (min-width: 600px) {
