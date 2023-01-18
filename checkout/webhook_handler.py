@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -45,14 +46,28 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
-        intent = event.data.object
+        # intent = event.data.object  #original code
+        # pid = intent.id
+        # bag = intent.metadata.bag
+        # save_info = intent.metadata.save_info
+
+        # billing_details = intent.charges.data[0].billing_details
+        # diver_details = intent.diver
+        # grand_total = round(intent.charges.data[0].amount / 100, 2)
+
+        intent = event.data.object #new code
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
-        diver_details = intent.diver
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
+        # Get the Charge object
+        stripe_charge = stripe.Charge.retrieve(
+            intent.latest_charge
+        )
+
+        billing_details = stripe_charge.billing_details # updated
+        diver_details = intent.shipping
+        grand_total = round(stripe_charge.amount / 100, 2) # updated
 
         # Clean data in the diver details
         for field, value in diver_details.info.items():
