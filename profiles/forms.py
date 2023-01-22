@@ -15,9 +15,11 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'default_phone_number': 'Phone Number',
-            'default_diver_grade': 'Diver Grade',
-            'default_diver_age': 'Diver Age',
-            'default_other_qualifications': 'Other Diving Qualifications',
+            'default_street_address1': 'Steet Address Line 1',
+            'default_street_address2': 'Steet Address Line 2',
+            'default_town_or_city': 'Town or City',
+            'default_county': 'County',
+            'default_country': 'Country',
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True

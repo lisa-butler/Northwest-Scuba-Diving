@@ -42,9 +42,10 @@ def checkout(request):
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
-            'diver_grade': request.POST['diver_grade'],
-            'diver_age': request.POST['diver_age'],
-            'other_qualifications': request.POST['other_qualifications'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'town_or_city': request.POST['town_or_city'],
+            'county': request.POST['county'],
             'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
@@ -130,9 +131,10 @@ def checkout(request):
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
-                    'diver_grade': profile.default_diver_grade,
-                    'diver_age': profile.default_diver_age,
-                    'other_qualifications': profile.default_other_qualifications,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'town_or_city': profile.default_town_or_city,
+                    'county': profile.default_county,
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
@@ -170,9 +172,10 @@ def checkout_success(request, order_number):
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
-                'default_diver_grade': order.diver_grade,
-                'default_diver_age': order.diver_age,
-                'default_other_qualifications': order.other_qualifications,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_town_or_city': order.town_or_city,
+                'default_county': order.county,
                 'default_country': order.country,
 
             }

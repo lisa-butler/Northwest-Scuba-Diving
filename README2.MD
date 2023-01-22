@@ -67,79 +67,40 @@ Determining what to include in this ecommerce site involved some research. I loo
 - As a site administrator, I should be able to gather some data from customers re their diving grade and age, so that I can properly prepare for their visit.
 - As a site administrator, I should be able to add, remove and edit products, so that I can keep the avalible courses up to date and add things as they come up.
 
+### **Style**
+
+Background: After some experimentation with backgrounds and overlays, it was concluded that a plain white background provided the most visually appealling and accessible style. These benefits for accessibility would enable the older population to have a better chance of navigating the application. A basic icon that was used on an earlier application was selected as this had a nice color pallet and fitted the theme in a visually pleasing way. A small banner of photographs was used to add some life to the quieter pages as was done in previous projects. At this stage i am aware thaat styling is not my strong suit so have elected to keep things simple.
 
 ### Colour Scheme
+After some experimentation, a white background was chosen as it enabled the content to be very legible and to stand out for the user, making the site more navigatable.
 
-Explain your colours and the colour scheme.
-
-- `#555` used for primary text as it is high contrast against the white background so is easy to read.
-- `teal` used for main logo text and some highlights as it is a water themed color.
-- `#000` used for text as it stands out.
-- `red and blue` used for edit and delete functionality for admin.
+- `Dark Grey` used for primary text as it is high contrast against the white background so is easy to read.
+- `Teal` used for main logo text and some highlights as it is a water themed color.
+- `Black` used for text as it stands out.
+- `Red and Blue` used for edit and delete functionality for admin.
 
 I used CSS Bootstrap convienience classes to apply to all Toasts.
-![Am I Responsive Testing](documentation/amiresponsive.png)
-
+![Convenience Classes](documentation/convenience_classes.png)
 
 
 ### Typography
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
+Google Fonts and Font Awesome were used to select fonts and icons for this ecommerce site.
 
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
+- [Acme](https://fonts.google.com/specimen/Acme?query=acme) was used throughout the site as it was clear and legible while also having a water themed style.
 
-Example:
+- [Font Awesome](https://fontawesome.com/icons) icons were used throughout the site, such as the social media icons in the footer and for the account and shopping bag tabs.
 
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
-
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
-
-## User Stories
-
-In this section, list all of your user stories for the project.
-
-### New Site Users
-
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-
-### Returning Site Users
-
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-
-### Site Admin
-
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
 
 ## Wireframes
 
-In this section, display your wireframe screenshots using a Markdown `table`.
 
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
 
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
 ### Home Page Wireframes
 
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
 
 ### About Page Wireframes
 

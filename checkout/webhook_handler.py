@@ -59,20 +59,24 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
+        print(intent)
 
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
 
-        billing_details = stripe_charge.billing_details # updated
-        diver_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2) # updated
+        billing_details = stripe_charge.billing_details  # updated
+        # shipping_intent = intent.shipping
+        grand_total = round(stripe_charge.amount / 100, 2)  # updated
+        print(billing_details)
 
         # Clean data in the diver details
-        for field, value in diver_details.info.items():
+
+        # THIS WILL NEED TO BE CHANGED TO billing_details.address
+        for field, value in billing_details.address.items():
             if value == "":
-                diver_details.info[field] = None
+                billing_details.address[field] = None
 
         # Update profile information if save_info was checked
         profile = None
@@ -80,11 +84,17 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_phone_number = diver_details.phone
-                profile.default_diver_grade = diver_details.info.diver_grade
-                profile.default_diver_age = diver_details.info.diver_age
-                profile.default_other_qualifications = diver_details.info.other_qualifications
-                profile.default_country = diver_details.address.country
+                # THIS WILL NEED TO CHANGE TO billing_details.phone
+                profile.default_phone_number = billing_details.phone
+
+                # THESE WILL NEED TO RETRIEVED FROM THE FORM AS THEY DON'T EXIST AS STRIPE FIELDS
+                # YOU COULD ALSO REMOVE THEM FROM THIS
+                # profile.default_diver_grade = diver_details.address.diver_grade
+                # profile.default_diver_age = diver_details.address.diver_age
+                # profile.default_other_qualifications = diver_details.address.other_qualifications
+
+                # THIS WILL NEED TO CHANGE TO billing_details.address.country
+                profile.default_country = billing_details.address.country
                 profile.save()
 
         order_exists = False
@@ -92,13 +102,19 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=diver_details.name,
+                    # THESE WILL NEED TO BE CHANGED TO billing_details.
+                    full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
-                    phone_number__iexact=diver_details.phone,
-                    diver_grade__iexact=diver_details.info.diver_grade,
-                    diver_age__iexact=diver_details.info.diver_age,
-                    other_qualifications__iexact=diver_details.info.other_qualifications,
-                    country__iexact=diver_details.info.country,
+                    phone_number__iexact=billing_details.phone,
+
+                    # THESE WILL NEED TO RETRIEVED FROM THE FORM AS THEY DON'T EXIST AS STRIPE FIELDS
+                    # YOU COULD ALSO REMOVE THEM FROM THIS
+                    # diver_grade__iexact=diver_details.address.diver_grade,
+                    # diver_age__iexact=diver_details.address.diver_age,
+                    # other_qualifications__iexact=diver_details.address.other_qualifications,
+
+                    # THIS WILL NEED TO CHANGE TO billing_details.address.country
+                    country__iexact=billing_details.address.country,
 
                     grand_total=grand_total,
                     original_bag=bag,
@@ -118,11 +134,14 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    full_name=diver_details.name,
+                    # THIS WILL NEED TO CHANGE TO billing_details.name
+                    full_name=billing_details.name,
                     user_profile=profile,
                     email=billing_details.email,
-                    phone_number=diver_details.phone,
-                    country=diver_details.address.country,
+                    # THIS WILL NEED TO CHANGE TO billing_details.phone
+                    phone_number=billing_details.phone,
+                    # THIS WILL NEED TO CHANGE TO billing_details.address.country
+                    country=billing_details.address.country,
                     original_bag=bag,
                     stripe_pid=pid,
                 )

@@ -6,8 +6,8 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
-                  'diver_grade', 'diver_age',
-                  'other_qualifications', 'country',)
+                  'street_address1', 'street_address2', 'town_or_city',
+                  'county', 'country',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -19,9 +19,10 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'diver_grade': 'Diving Grade (if any)',
-            'diver_age': 'Age',
-            'other_qualifications': 'Other Diving Qualifications',
+            'street_address1': 'Street Address Line 1',
+            'street_address2': 'Street Address Line 2',
+            'town_or_city': 'Town or City',
+            'county': 'County or State',
             'country': 'Country of Nationality',
         }
 
