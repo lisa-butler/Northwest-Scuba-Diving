@@ -24,6 +24,7 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
+                    <div class="col-sm-2 col-md-2 d-lg-none d-xl-none"></div>
                         <div class="product_card col-sm-8 col-md-8 col-lg-6 col-xl-6">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
@@ -53,22 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            </div>
-                        {% endif %}
+                        <div class="col-sm-2 col-md-2 d-lg-none d-xl-none"></div>
                     {% endfor %}
                 </div>
             </div>
