@@ -191,6 +191,11 @@ footer {
     justify-content: space-around;
     margin-top: 4em;
     margin-bottom: 0;
+    padding: 0;
+}
+
+.social-networks > ul {
+    padding: 0 !important;
 }
 
 .social-networks > li {
