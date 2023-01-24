@@ -388,7 +388,6 @@ On hitting submit order the user is redirected to the thank you page. This page 
 ![Checkout page](documentation/screenshots/order-recieved.png)
 
 
-
 ### **profile.html**
 
 This is the my profile page that is avalible to all users. It includes an order history and a form they can fill in to update their default details. This is intended to make checkout a smoother proceedure.
@@ -405,6 +404,23 @@ The order history is displayed next to this. It is a simple scrollable card with
 
 ![Order history](documentation/screenshots/order-history-card.png)
 
+### **product_management.html**
+
+Product management is a page that can only be accessed by the admin. This page consists of a form for the admin to fill out to add a new product.
+The admin can select an image file for the product and once added, the new product will be populated in whatever category the admin selected from the dropdown.
+
+![Product management](documentation/screenshots/product-manage-page.png)
+
+
+### **orders.html**
+
+Customer orders is another admin only page. This page is a list of all customer orders so that the admin can keep track of divers that have registered for each dive, course etc.
+
+![Customers orders page](documentation/screenshots/cust-order-page.png)
+
+ It consists of simple card boxes with the customers basic information, their order info and a total.
+
+![Customer order card](documentation/screenshots/cust-order-card.png)
 
 ### **sign in/ sign out/ register**
 
@@ -418,16 +434,293 @@ These are simple forms for the user to fill in. They have form controls on them 
 
 When the user submits this form they are taken to a page that tells them they have been registered and to confirm their email address.
 
-### **Toasts!!**
+
 ### **Confirmation Emails**
 
 On registration an email is sent to the email address the user registered with. This can be seen below on a temporary email generator [Temp Mail](https://temp-mail.org/en/).
 
 ![Email confirmation](documentation/screenshots/confirm-mail.png)
 
-The email that is sent canbe seen below with a link for the user to click to verify this email address.
+The email that is sent can be seen below with a link for the user to click to verify this email address.
 
 ![Email Confirmation](documentation/screenshots/reg-email.png)
+
+When the user makes a purchase they also recieve an email, this email confirms that the users order has been recieved and informs them that they will recieve further information regarding their diving experience etc in the coming days.
+
+![Order Confirmation Email](documentation/screenshots/order-conf-email.png)
+
+### **Toasts**
+These are used extensively throughout the application. The code for toasts was taken from Bootstrap Toasts and modified for usage. These pop up when a customer registers, signs in, signs out, adds an item to their bag, removes an item from their bag etc. They are useful for showing the customer that their action has been recieved.
+
+The toast below shows an item has been added to the bag
+
+![Item added toast](documentation/screenshots/toast1.png)
+
+The toast below shows the user has been signed out sucessfully.
+
+![Logged out toast](documentation/screenshots/toast2.png)
+
+**Further features I would implement:**
+
+If I was to build this application again with the intentions of it being a live application, there are several additional features i would implement;
+
+* A stock control counter to limit the number of a specific product avaliable. For example on one of the courses, limit the places in the course to a set number and once that many people have registered for the course, remove it from the products view.
+* A more extensive customers orders page for the admin. This would display the products and the total number of customers who have registered for it.
+* A gallery tab where users could share their photos with a comment about their dive.
+
+------------------------------------------------------------------
+
+## Technologies Used
+
+<a name="tech"></a>
+
+### **Languages**
+
+The languages used in this project were;
+
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
+- [JavaScript](https://www.javascript.com) used for user interaction on the site.
+- [Python](https://www.python.org) used as the back-end programming language.
+
+
+### **Frameworks/Libraries/programs:**
+
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) and/or [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage.
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
+- [Markdown Builder by Tim Nelson](https://traveltimn.github.io/readme-builder) used to help generate the Markdown files.
+- [Flask](https://flask.palletsprojects.com) used as the Python framework for the site.
+- [Django](https://www.djangoproject.com) used as the Python framework for the site.
+- [MongoDB](https://www.mongodb.com) used as the non-relational database management with Flask.
+- [SQLAlchemy](https://www.sqlalchemy.org) used as the relational database management with Flask.
+- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
+- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
+- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
+- [Cloudinary](https://cloudinary.com) used for online static file storage.
+- [Stripe](https://stripe.com) used for online secure payments of ecommerce products/services.
+- [AWS S3](https://aws.amazon.com/s3) used for online static file storage.
+
+### **Other Requirements:**
+
+The full list of requirements can be seen in requirements.txt
+
+asgiref==3.5.2
+boto3==1.26.36
+botocore==1.29.36
+dj-database-url==0.5.0
+Django==3.2
+django-allauth==0.51.0
+django-countries==7.2.1
+django-crispy-forms==1.14.0
+django-storages==1.13.2
+django-truncate==0.1
+gunicorn==20.1.0
+jmespath==1.0.1
+oauthlib==3.2.2
+Pillow==9.3.0
+psycopg2==2.9.5
+PyJWT==2.6.0
+python-dotenv==0.21.0
+python3-openid==3.2.0
+pytz==2022.6
+requests-oauthlib==1.3.1
+s3transfer==0.6.0
+sqlparse==0.4.3
+stripe==5.0.0
+
+
+### **Agile Development Process:**
+
+* GitHub Issue Tracker **[Issues](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues)**
+
+* GitHub Projects Board **[Projects Board](https://github.com/users/lisa-butler/projects/5)**
+
+------------------------------------------------------------------
+### MoSCoW Prioritization
+
+I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab by deciding where they fell in the below categories.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
+## Ecommerce Business Model
+
+This site sells services to individual customers, and therefore follows a `Business to Customer` model.
+It is of the simplest **B2C** forms, as it focuses on individual transactions, and doesn't need anything
+such as monthly/annual subscriptions, however, this is something i would consider looking into in the future.
+
+It is still in its early development stages, although it already has a newsletter, and links for social media marketing.
+
+Social media can potentially build a community of users around the business, and boost site visitor numbers,
+especially when using larger platforms such a Facebook.
+
+A newsletter list can be used by the business to send a regular update to customer regarding courses, new dives etc that are now on offer.
+As well as updates to business hours, notifications of events, recuritment etc!
+
+## Search Engine Optimization (SEO) & Social Media Marketing
+
+### Keywords
+
+I've identified some appropriate keywords to align with my site, that should help users
+when searching online to find my page easily from a search engine.
+This included a series of the following keyword types
+
+- Short-tail (head terms) keywords
+- Long-tail keywords
+
+I also played around with [Word Tracker](https://www.wordtracker.com) a bit
+to check the frequency of some of my site's primary keywords (only until the free trial expired).
+
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+This was generated using my deployed site URL: https://northwest-scubadiving.herokuapp.com
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+Inside, I've included the default settings:
+
+```
+User-agent: *
+Disallow:
+Sitemap: https://northwest-scubadiving.herokuapp.com/sitemap.xml
+```
+
+Further links for future implementation:
+- [Google search console](https://search.google.com/search-console)
+- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
+- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+
+### Social Media Marketing
+
+Creating a strong social base (with participation) and linking that to the business site can help drive sales.
+Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
+
+I've created a mockup Facebook business account using the
+[Balsamiq template](https://code-institute-org.github.io/5P-Assessments-Handbook/files/Facebook_Mockups.zip)
+provided by Code Institute.
+
+![Balsamic facebook mockup](documentation/wireframes/fabebook-page-mockup.png)
+
+### Newsletter Marketing
+
+I have incorporated a newsletter sign-up form on my application, to allow users to supply their
+email address if they are interested in recieving newsletters.
+I currently do not have functionality in place to send the user newsletters, however, this is something i would add in the future.
+------------------------------------------------------------------
+## Troubleshooting and testing
+
+<a name="test"></a>
+
+### **Troubleshooting:**
+
+Troubleshooting was quite varied on this project as it involved quite a wide range of different technologies.
+The biggest issue i ran into was getting the webhook handlers and Stripe to work effectively.
+Stripe is now working well and recieveing orders correctly, after much ordeal.
+
+![Stripe](documentation/screenshots/stripe.png)
+
+There were some database related issues which were solved by googling how to clear databases etc.
+There were countless other small errors solved throughout the development of this application.
+Troubleshooting was managed using dev tools, printing to terminal and utilising a lot of googling.
+
+**Error Handling and input control:**
+
+Input control was something i spent some time thinking about as there were many forms in this application.
+Forms like the signup form, require the correct parameters in their fields in order to accept the form. There must be an @ in the email field and the passwords must match and not be too similar to the username.
+There was also some checking the db for if the email and user already existed. This is done when a user tries to register. I also have a check in to make sure that the user doesnt create duplicate orders.
+When registering for the newsletter, there is a check to ensure the user is signed in, then to check if they are already subscribed.
+
+### **Testing:**
+
+**Code Validation:**
+
+HTML:
+Validated using **[W3C HTML Validator](https://validator.w3.org/)**
+
+CSS:
+Validated using Jigsaw via **[W3C](https://jigsaw.w3.org/css-validator/#validate_by_input)**
+
+![CSS validation](log/static/images/W3CCSS.jpg)
+
+Python:
+Validated using **[ExtendsClass Python tester](https://extendsclass.com/python-tester.html)**
+
+![Python validation](log/static/images/extendsclasspython.jpg)
+
+**Browser Compatibility:**
+
+Browser compatability was checked using both my own device (an Acer Aspire A514-52) which is running Google Chrome and with **[BrowserStack](https://www.browserstack.com/)**.
+
+Compatability was confirmed on the following;
+
+Google Chrome (tested on my own device) &#9745;
+
+![Chrome testing](documentation/testing/chrome-testing.png)
+
+Firefox (tested on my own device) &#9745;
+
+![Firefox testing](documentation/testing/firefox-testing.png)
+
+Microsoft Edge (tested on my own device) &#9745;
+
+![Microsoft edge testing](documentation/testing/ms-edge-testing.png)
+
+Opera (tested on BrowserStack) &#9745;
+
+Safari (tested on BrowserStack) &#9745;
+
+Compatabilty with both Android and IOS devices was checked as well.
+
+
+**Accessibility Testing:**
+
+Accessibility testing was done through Google LightHouse. The result was 97%. The only issue noted being the light grey used for the login/logout text. I chose to leave this as i liked the asthetic and felt it was not significant enough to cause issues.
+
+![Accessibility test](documentation/testing/accessibility-testing.png)
+
+**Performance Testing:**
+
+Performace testing was checked using Google Lighthouse also with a very good result.
+
+![Performance testing](documentation/testing/performance-testing.png)
+
+**Responsivness:**
+
+Responsivness was also checked using **[BrowserStack](https://www.browserstack.com/)**. This showed the application to work on all screen sizes.
+
+### Testing reponsivness on an Ipad Pro
+Viewport: 1024x1366 Screen size: 12.9" Monitor size: 15.4"
+
+![Responsivness test on an Ipad Pro](documentation/testing/responsive-ipadpro.png)
+
+### Testing reponsivness on a Samsung Galaxy Note 10
+Viewport: 412x869 Screen size: 5.94" Monitor size: 15.4"
+
+![Responsivness test on a Samsung Galaxy Note 10](documentation/testing/responsive-galaxynote10.png)
+
+### Testing reponsivness on a Iphone X
+Viewport: 375x812 Screen size: 5.8" Monitor size: 15.4"
+
+![Responsivness test on a Iphone X](documentation/testing/responsive-iphonex.png)
+
+
+The application was also responsive on larger and smaller screens and worked on different devices and browsers.
+
+
+
 
 
 
