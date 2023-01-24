@@ -319,7 +319,6 @@ The page for submitting a review contains a simple card with a form on it. This 
 ![Write a review](documentation/screenshots/my-review-page.png)
 
 
-
 ### **newsletter.html**
 
 The newsletter page is very straightforward. It checks if the user is logged in and if not it suggests that the user login or register to sign up for the newsletter.
@@ -347,7 +346,6 @@ Clicking subscribe will take the user to the unsubscribing sucessful page. This 
 ![Newsletter unsubscribbed](documentation/screenshots/newsletter-unsubscribed.png)
 
 
-
 ### **bag.html**
 
 The shopping bag page suck with the same clean objects on a white background theme as the previous pages. Items are visted with their price and the total cost at the bottom of the page alongside a checkout button.
@@ -362,9 +360,84 @@ Initially the bag checks if the user had anything in their shopping bag. If not,
 
 **Items in Bag:**
 
-If there are items to be displayed in the bag it shows the items images with their price and quantity listed. The user has the opportunity to increase or decrese the quantity or remove the item from the bag at this point.
+If there are items to be displayed in the bag it shows the items images with their price and quantity listed. The user has the opportunity to increase or decrese the quantity or remove the item from the bag at this point. The subtotal is displayed alongside the product and the grand total is at the bottom. There is also a checkout option avalible.
 
 ![Bag items](documentation/screenshots/bag-quantity.png)
+
+### **checkout.html**
+
+This is the page that the user lands on after clicking checkout in the shopping bag page.
+
+![Checkout page](documentation/screenshots/checkout-page.png)
+
+**Checkout Form:**
+The checkout page contains a form for the users billing details. These are required for stripe to process the payment and are pre populated for a logged in user who has saved their details on their profile. The form consists of seven text fields for the user to type in their address, email, phone number etc and one drop down for selcting country.
+There is a box the user can tick to save this information to their profile.
+There is a card details field below this that the user must fill their card details into to checkout. The checkout button at the bottom of the screen has a line of text below it to remind the user that they will be billed this amount.
+
+![Checkout form](documentation/screenshots/checkout-form.png)
+
+**Order Summary:**
+The order summary is to the right of the checkout page and displays the items in the users basket alongside their quantity, the subtotals for each and the grandtotal. A small image of the item is displayed.
+
+![Checkout page](documentation/screenshots/checkout-summary.png)
+
+**Thank You Page:**
+On hitting submit order the user is redirected to the thank you page. This page displays an order summary complete with their order number and order date alongside their basic details.
+
+![Checkout page](documentation/screenshots/order-recieved.png)
+
+
+
+### **profile.html**
+
+This is the my profile page that is avalible to all users. It includes an order history and a form they can fill in to update their default details. This is intended to make checkout a smoother proceedure.
+
+![Profile page](documentation/screenshots/profile-page.png)
+
+**Default information:**
+The default information form gives users the opportunity to update their address and phone number to save them from adding in these details in the checkout form everytime. It is a useful tool for returning users and reduces the mouse clicks involved in going from checkout to proceed with payment.
+
+![Default information](documentation/screenshots/user-info-card.png)
+
+**Order History:**
+The order history is displayed next to this. It is a simple scrollable card with the users previous orders listed on it. There is a brief order summary and a grand total as well as the date the order was placed for each order. By clicking on the order number the user can expand the order confirmation box and view their previous order in detail.
+
+![Order history](documentation/screenshots/order-history-card.png)
+
+
+### **sign in/ sign out/ register**
+
+Sign In, Sign Out and Register, as well as password recovery etc are all sourced form Allauth templates and as such look very similar throughout. I did not make massive styling changes to these templates but rather did some minor changes to the frequently utilised ones, such as sign in, sign out and register.
+
+![Register](documentation/screenshots/signup.png)
+
+These are simple forms for the user to fill in. They have form controls on them to ensure that the email is indeed an email, the password is not too simple and the username or email doesnt already exist in our database.
+
+![Form validation](documentation/screenshots/register-validation.png)
+
+When the user submits this form they are taken to a page that tells them they have been registered and to confirm their email address.
+
+### **Toasts!!**
+### **Confirmation Emails**
+
+On registration an email is sent to the email address the user registered with. This can be seen below on a temporary email generator [Temp Mail](https://temp-mail.org/en/).
+
+![Email confirmation](documentation/screenshots/confirm-mail.png)
+
+The email that is sent canbe seen below with a link for the user to click to verify this email address.
+
+![Email Confirmation](documentation/screenshots/reg-email.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
