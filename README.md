@@ -553,16 +553,13 @@ I was able to apply the MoSCow prioritization and labels to my user stories with
 ## Ecommerce Business Model
 
 This site sells services to individual customers, and therefore follows a `Business to Customer` model.
-It is of the simplest **B2C** forms, as it focuses on individual transactions, and doesn't need anything
-such as monthly/annual subscriptions, however, this is something i would consider looking into in the future.
+It is of the simplest **B2C** forms, as it focuses on individual transactions, and doesn't need anything such as monthly/annual subscriptions, however, this is something i would consider looking into in the future, such as a club members fee for memebers who would like to pay a once off payment and dive with the club weekly.
 
-It is still in its early development stages, although it already has a newsletter, and links for social media marketing.
+It is still in its early development stages, although it already has a newsletter, and links for social media marketing, this is something that i would like to develop further.
 
-Social media can potentially build a community of users around the business, and boost site visitor numbers,
-especially when using larger platforms such a Facebook.
+Social media can potentially build a community of users around the business, and boost site visitor numbers, especially when using larger platforms such a Facebook.
 
-A newsletter list can be used by the business to send a regular update to customer regarding courses, new dives etc that are now on offer.
-As well as updates to business hours, notifications of events, recuritment etc!
+The newsletter list can be used by the business to send regular updates to customers regarding courses, new dives etc that are now on offer.
 
 ## Search Engine Optimization (SEO) & Social Media Marketing
 
@@ -597,20 +594,12 @@ Disallow:
 Sitemap: https://northwest-scubadiving.herokuapp.com/sitemap.xml
 ```
 
-Further links for future implementation:
-- [Google search console](https://search.google.com/search-console)
-- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
-- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
-- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
-
 ### Social Media Marketing
 
-Creating a strong social base (with participation) and linking that to the business site can help drive sales.
-Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
+Creating a strong social media base and linking that to the business site can help drive sales.
+Using more popular providers with a wider user base, such as Facebook, typically maximizes site views and users can be funnelled toward the application via social media sites sites and advertising.
 
-I've created a mockup Facebook business account using the
-[Balsamiq template](https://code-institute-org.github.io/5P-Assessments-Handbook/files/Facebook_Mockups.zip)
-provided by Code Institute.
+I've created a mockup Facebook business account using the Balsamiq template provided by Code Institute.
 
 ![Balsamic facebook mockup](documentation/wireframes/fabebook-page-mockup.png)
 
@@ -634,7 +623,7 @@ Stripe is now working well and recieveing orders correctly, after much ordeal.
 
 There were some database related issues which were solved by googling how to clear databases etc.
 There were countless other small errors solved throughout the development of this application.
-Troubleshooting was managed using dev tools, printing to terminal and utilising a lot of googling.
+Trouble shooting was managed using dev tools, printing to terminal and utilising a lot of googling. I also sought help from my mentor, classmates, tutor support and my friends working in software roles.
 
 **Error Handling and input control:**
 
@@ -650,15 +639,17 @@ When registering for the newsletter, there is a check to ensure the user is sign
 HTML:
 Validated using **[W3C HTML Validator](https://validator.w3.org/)**
 
+![HTML validation](documentation/testing/html-validation.png)
+
 CSS:
 Validated using Jigsaw via **[W3C](https://jigsaw.w3.org/css-validator/#validate_by_input)**
 
-![CSS validation](log/static/images/W3CCSS.jpg)
+![CSS validation](documentation/testing/css-validated.png)
 
 Python:
 Validated using **[ExtendsClass Python tester](https://extendsclass.com/python-tester.html)**
 
-![Python validation](log/static/images/extendsclasspython.jpg)
+![Python validation](documentation/testing/python-validation.png)
 
 **Browser Compatibility:**
 
@@ -687,9 +678,14 @@ Compatabilty with both Android and IOS devices was checked as well.
 
 **Accessibility Testing:**
 
-Accessibility testing was done through Google LightHouse. The result was 97%. The only issue noted being the light grey used for the login/logout text. I chose to leave this as i liked the asthetic and felt it was not significant enough to cause issues.
+Accessibility testing was done through Google LightHouse. The result was 95%. The only issue noted being that the background and foreground do not have sufficenient contrast in some small areas.I chose to leave this as it was in very minor areas.
 
 ![Accessibility test](documentation/testing/accessibility-testing.png)
+
+Areas with known errors can be seen below
+
+![Accessibility Errors](documentation/testing/accessibility-errors.png)
+
 
 **Performance Testing:**
 
@@ -716,8 +712,415 @@ Viewport: 375x812 Screen size: 5.8" Monitor size: 15.4"
 
 ![Responsivness test on a Iphone X](documentation/testing/responsive-iphonex.png)
 
-
 The application was also responsive on larger and smaller screens and worked on different devices and browsers.
+
+**Manual Testing:**
+
+### Testing links and forms:
+
+* Navigation links are working and bring the user to the correct page. &#9745;
+* The home page "Courses” and "Dives" links are working and take user to the correct pages. &#9745;
+* The social media links all work and take users to the correct social media. &#9745;
+* The title of the page "Northwest Scuba Diving" works as a link to return the user to home. &#9745;
+* Login and logout functionality works correctly. &#9745;
+* The registration form has error handling built in so the user must make the correct inputs.&#9745;
+* The forms all redirect appropriately. &#9745;
+* Email confirmation is working correctly. &#9745;
+* Customers Orders are updating when a user makes an order, displaying the new order. &#9745;
+* Newsletter subscribe and unsubscribe functionality is working correctly. &#9745;
+
+
+### Testing security elements:
+
+* When the user is not logged in they sign up for the newsletter or submit a review. &#9745;
+* The user cannot create multiple accounts with the same email or username. &#9745;
+* The user can edit and delete items in their basket. &#9745;
+* The user cannot subscribe for the newsletter multiple times with the same email. &#9745;
+* The user cannot subscribe someone else to the newsletter. &#9745;
+* The admin of the site can see all orders that have been placed, those without admin privelages cannot see this. &#9745;
+* The site admin can add and edit products, those without admin status cannot do this. &#9745;
+
+### Testing other elements:
+
+* Images when used loaded correctly. &#9745;
+* Product images load correctly and appropriately for thir assigned product. &#9745;
+* Navigation of the application is intuitive. &#9745;
+* When the user is logged in the options change from login or register to my profile, newsletter and logout. &#9745;
+* When the user is not logged in the option to login or register shows. &#9745;
+
+------------------------------------------------------------------
+
+## Bugs
+
+<a name="bugs"></a>
+
+### **Bugs Found:**
+
+I had a lot of issues regarding Stripe and Webhooks towards the end of the development. This took up most of a week to solve but ultimately was sucessful. The issues i was having were based around using outdated code and having some minor typos as well as a lack of knowledge of Stripes requirements. Before dealing with this error i did not have a form to gather the users address as i did not need it for my sites purposes, i had to implement a billing details form to solve the error with Stripe as this is a Stripe requirement.
+
+Other bugs i found were buttons directing wrong, the shopping bag not allowing checkout and the products diaplaying multiples.
+
+There were some initaial difficulties getting connected to the database, however these were quickly solved and clearing the database was needed as products files were altered and updated.
+
+
+There are hopefully no bugs present in the application now, if you happen to come across any, please email me at l.butler1993@gmail.com.
+
+------------------------------------------------------------------
+## Deployment
+
+<a name="deploy"></a>
+
+The live deployed application can be found at [Northwest Scuba Diving](https://northwest-scubadiving.herokuapp.com/).
+
+### ElephantSQL Database
+
+This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
+
+To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
+- Click **Create New Instance** to start a new database.
+- Provide a name (this is commonly the name of the project: northwest-scuba-diving).
+- Select the **Tiny Turtle (Free)** plan.
+- You can leave the **Tags** blank.
+- Select the **Region** and **Data Center** closest to you.
+- Once created, click on the new database name, where you can view the database URL and Password.
+
+### Amazon AWS
+
+This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
+
+Once you've created an AWS account and logged-in, follow these series of steps to get your project connected.
+Make sure you're on the **AWS Management Console** page.
+
+#### S3 Bucket
+
+- Search for **S3**.
+- Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
+- Uncheck **Block all public access**, and acknowledge that the bucket will be public (required for it to work on Heroku).
+- From **Object Ownership**, make sure to have **ACLs enabled**, and **Bucket owner preferred** selected.
+- From the **Properties** tab, turn on static website hosting, and type `index.html` and `error.html` in their respective fields, then click **Save**.
+- From the **Permissions** tab, paste in the following CORS configuration:
+
+	```shell
+	[
+		{
+			"AllowedHeaders": [
+				"Authorization"
+			],
+			"AllowedMethods": [
+				"GET"
+			],
+			"AllowedOrigins": [
+				"*"
+			],
+			"ExposeHeaders": []
+		}
+	]
+	```
+
+- Copy your **ARN** string.
+- From the **Bucket Policy** tab, select the **Policy Generator** link, and use the following steps:
+	- Policy Type: **S3 Bucket Policy**
+	- Effect: **Allow**
+	- Principal: `*`
+	- Actions: **GetObject**
+	- Amazon Resource Name (ARN): **paste-your-ARN-here**
+	- Click **Add Statement**
+	- Click **Generate Policy**
+	- Copy the entire Policy, and paste it into the **Bucket Policy Editor**
+
+		```shell
+		{
+			"Id": "Policy1234567890",
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Sid": "Stmt1234567890",
+					"Action": [
+						"s3:GetObject"
+					],
+					"Effect": "Allow",
+					"Resource": "arn:aws:s3:::your-bucket-name/*"
+					"Principal": "*",
+				}
+			]
+		}
+		```
+
+	- Before you click "Save", add `/*` to the end of the Resource key in the Bucket Policy Editor (like above).
+	- Click **Save**.
+- From the **Access Control List (ACL)** section, click "Edit" and enable **List** for **Everyone (public access)**, and accept the warning box.
+	- If the edit button is disabled, you need to change the **Object Ownership** section above to **ACLs enabled** (mentioned above).
+
+#### IAM
+
+Back on the AWS Services Menu, search for and open **IAM** (Identity and Access Management).
+Once on the IAM page, follow these steps:
+
+- From **User Groups**, click **Create New Group**.
+	- Suggested Name: `group-northwest-scuba-diving` (group + the project name)
+- Tags are optional, but you must click it to get to the **review policy** page.
+- From **User Groups**, select your newly created group, and go to the **Permissions** tab.
+- Open the **Add Permissions** dropdown, and click **Attach Policies**.
+- Select the policy, then click **Add Permissions** at the bottom when finished.
+- From the **JSON** tab, select the **Import Managed Policy** link.
+	- Search for **S3**, select the `AmazonS3FullAccess` policy, and then **Import**.
+	- You'll need your ARN from the S3 Bucket copied again, which is pasted into "Resources" key on the Policy.
+
+		```shell
+		{
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Effect": "Allow",
+					"Action": "s3:*",
+					"Resource": [
+						"arn:aws:s3:::your-bucket-name",
+						"arn:aws:s3:::your-bucket-name/*"
+					]
+				}
+			]
+		}
+		```
+
+	- Click **Review Policy**.
+	- Suggested Name: `policy-northwest-scuba-diving` (policy + the project name)
+	- Provide a description:
+		- "Access to S3 Bucket for northwest-scuba-diving static files."
+	- Click **Create Policy**.
+- From **User Groups**, click your "group-northwest-scuba-diving".
+- Click **Attach Policy**.
+- Search for the policy you've just created ("policy-northwest-scuba-diving") and select it, then **Attach Policy**.
+- From **User Groups**, click **Add User**.
+	- Suggested Name: `user-northwest-scuba-diving` (user + the project name)
+- For "Select AWS Access Type", select **Programmatic Access**.
+- Select the group to add your new user to: `group-northwest-scuba-diving`
+- Tags are optional, but you must click it to get to the **review user** page.
+- Click **Create User** once done.
+- You should see a button to **Download .csv**, so click it to save a copy on your system.
+	- **IMPORTANT**: once you pass this page, you cannot come back to download it again, so do it immediately!
+	- This contains the user's **Access key ID** and **Secret access key**.
+	- `AWS_ACCESS_KEY_ID` = **Access key ID**
+	- `AWS_SECRET_ACCESS_KEY` = **Secret access key**
+
+#### Final AWS Setup
+
+- If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
+- Back within **S3**, create a new folder called: `media`.
+- Select any existing media images for your project to prepare them for being uploaded into the new folder.
+- Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
+- No further settings are required, so click **Upload**.
+
+### Stripe API
+
+This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
+
+Once you've created a Stripe account and logged-in, follow these series of steps to get your project connected.
+
+- From your Stripe dashboard, click to expand the "Get your test API keys".
+- You'll have two keys here:
+	- `STRIPE_PUBLIC_KEY` = Publishable Key (starts with **pk**)
+	- `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
+
+As a backup, in case users prematurely close the purchase-order page during payment, we can include Stripe Webhooks.
+
+- From your Stripe dashboard, click **Developers**, and select **Webhooks**.
+- From there, click **Add Endpoint**.
+	- `https://northwest-scubadiving.herokuapp.com/checkout/wh/`
+- Click **receive all events**.
+- Click **Add Endpoint** to complete the process.
+- You'll have a new key here:
+	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
+
+### Gmail API
+
+This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
+
+Once you've created a Gmail (Google) account and logged-in, follow these series of steps to get your project connected.
+
+- Click on the **Account Settings** (cog icon) in the top-right corner of Gmail.
+- Click on the **Accounts and Import** tab.
+- Within the section called "Change account settings", click on the link for **Other Google Account settings**.
+- From this new page, select **Security** on the left.
+- Select **2-Step Verification** to turn it on. (verify your password and account)
+- Once verified, select **Turn On** for 2FA.
+- Navigate back to the **Security** page, and you'll see a new option called **App passwords**.
+- This might prompt you once again to confirm your password and account.
+- Select **Mail** for the app type.
+- Select **Other (Custom name)** for the device type.
+	- Any custom name, such as "Django" or northwest-scuba-diving
+- You'll be provided with a 16-character password (API key).
+	- Save this somewhere locally, as you cannot access this key again later!
+	- `EMAIL_HOST_PASS` = your new 16-character API key
+	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+
+| Key | Value |
+| --- | --- |
+| `AWS_ACCESS_KEY_ID` | insert your own AWS Access Key ID key here |
+| `AWS_SECRET_ACCESS_KEY` | insert your own AWS Secret Access key here |
+| `DATABASE_URL` | insert your own ElephantSQL database URL here |
+| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
+| `EMAIL_HOST_PASS` | insert your own Gmail API key here |
+| `EMAIL_HOST_USER` | insert your own Gmail email address here |
+| `SECRET_KEY` | this can be any random secret key |
+| `STRIPE_PUBLIC_KEY` | insert your own Stripe Public API key here |
+| `STRIPE_SECRET_KEY` | insert your own Stripe Secret API key here |
+| `STRIPE_WH_SECRET` | insert your own Stripe Webhook API key here |
+| `USE_AWS` | True |
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's **requirements** (where applicable) using:
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+- `echo web: gunicorn app_name.wsgi > Procfile`
+- *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("AWS_ACCESS_KEY_ID", "insert your own AWS Access Key ID key here")
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "insert your own AWS Secret Access key here")
+os.environ.setdefault("DATABASE_URL", "insert your own ElephantSQL database URL here")
+os.environ.setdefault("EMAIL_HOST_PASS", "insert your own Gmail API key here")
+os.environ.setdefault("EMAIL_HOST_USER", "insert your own Gmail email address here")
+os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
+os.environ.setdefault("STRIPE_PUBLIC_KEY", "insert your own Stripe Public API key here")
+os.environ.setdefault("STRIPE_SECRET_KEY", "insert your own Stripe Secret API key here")
+os.environ.setdefault("STRIPE_WH_SECRET", "insert your own Stripe Webhook API key here")
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DEBUG", "True")
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+
+If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+- `python3 manage.py dumpdata your-model > your-model.json`
+- *repeat this action for each model you wish to backup*
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/lisa-butler/Northwest-Scuba-Diving)
+2. Locate the Code button above the list of files and click it
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/lisa-butler/Northwest-Scuba-Diving.git`
+7. Press Enter to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/lisa-butler/Northwest-Scuba-Diving)
+
+Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
+A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisa-butler/Northwest-Scuba-Diving)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
+
+
+## Credits and Acknowledgements
+
+<a name="credits"></a>
+
+### **Credits:**
+
+* Code: Code advice was taken from Stack Overflow (https://stackoverflow.com/).
+* Ideas were taken from the Code Institutes walkthrough projcts "Hello Django" and "Botique Ado" as well as course content.
+* Design ideas were taken from Bootstrap (https://getbootstrap.com/) as well as general web searches using Google.
+
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder by Tim Nelson](https://traveltimn.github.io/readme-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
+| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
+| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
+| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+
+
+### **Acknowledgements:**
+
+- I would like to thank my Code Institute mentor, [Tim Nelson] for his support throughout the development of this project and for going above and beyond to ensure i was presenting my best work.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank my classmates at the Code Institute who answered my questions and provided a comminity throughout this course.
+- I would like to thank my software developer friends (Joshua Butler-senior dev at Overstock Ireland and Glenn Gilmartin-senior dev at Overstock Ireland) for their advice and patience.
+------------------------------------------------------------------
+
+## Content and resources
+
+<a name="content"></a>
+
+* All content was written by the developer as part of an academic exercise for the Code Institute.
+* All images used are owned by the developer or permission has been granted for their usage.
 
 
 
