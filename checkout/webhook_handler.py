@@ -11,6 +11,7 @@ import json
 import time
 import stripe
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -46,16 +47,9 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
-        # intent = event.data.object  #original code
-        # pid = intent.id
-        # bag = intent.metadata.bag
-        # save_info = intent.metadata.save_info
 
-        # billing_details = intent.charges.data[0].billing_details
-        # diver_details = intent.diver
-        # grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        intent = event.data.object #new code
+        intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
@@ -72,8 +66,6 @@ class StripeWH_Handler:
         print(billing_details)
 
         # Clean data in the diver details
-
-        # THIS WILL NEED TO BE CHANGED TO billing_details.address
         for field, value in billing_details.address.items():
             if value == "":
                 billing_details.address[field] = None
@@ -84,16 +76,7 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                # THIS WILL NEED TO CHANGE TO billing_details.phone
                 profile.default_phone_number = billing_details.phone
-
-                # THESE WILL NEED TO RETRIEVED FROM THE FORM AS THEY DON'T EXIST AS STRIPE FIELDS
-                # YOU COULD ALSO REMOVE THEM FROM THIS
-                # profile.default_diver_grade = diver_details.address.diver_grade
-                # profile.default_diver_age = diver_details.address.diver_age
-                # profile.default_other_qualifications = diver_details.address.other_qualifications
-
-                # THIS WILL NEED TO CHANGE TO billing_details.address.country
                 profile.default_country = billing_details.address.country
                 profile.save()
 
@@ -102,18 +85,9 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    # THESE WILL NEED TO BE CHANGED TO billing_details.
                     full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
-
-                    # THESE WILL NEED TO RETRIEVED FROM THE FORM AS THEY DON'T EXIST AS STRIPE FIELDS
-                    # YOU COULD ALSO REMOVE THEM FROM THIS
-                    # diver_grade__iexact=diver_details.address.diver_grade,
-                    # diver_age__iexact=diver_details.address.diver_age,
-                    # other_qualifications__iexact=diver_details.address.other_qualifications,
-
-                    # THIS WILL NEED TO CHANGE TO billing_details.address.country
                     country__iexact=billing_details.address.country,
 
                     grand_total=grand_total,
@@ -134,13 +108,10 @@ class StripeWH_Handler:
             order = None
             try:
                 order = Order.objects.create(
-                    # THIS WILL NEED TO CHANGE TO billing_details.name
                     full_name=billing_details.name,
                     user_profile=profile,
                     email=billing_details.email,
-                    # THIS WILL NEED TO CHANGE TO billing_details.phone
                     phone_number=billing_details.phone,
-                    # THIS WILL NEED TO CHANGE TO billing_details.address.country
                     country=billing_details.address.country,
                     original_bag=bag,
                     stripe_pid=pid,

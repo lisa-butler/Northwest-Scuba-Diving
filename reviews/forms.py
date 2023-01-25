@@ -7,7 +7,6 @@ class Review(forms.ModelForm):
         model = UserReviewForm
         fields = ('title', 'review')
 
-
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated

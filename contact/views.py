@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404
+)
 from .forms import ContactForm
 from .models import Contact
 from django.contrib import messages
@@ -19,7 +21,8 @@ def contact(request):
             contactRequest.save()
 
             request.session['save_contact_request'] = 'save_contact_request' in request.POST
-            return redirect(reverse('contact_request_success', args=[contactRequest.ticket_number]))
+            return redirect(reverse('contact_request_success',
+                            args=[contactRequest.ticket_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

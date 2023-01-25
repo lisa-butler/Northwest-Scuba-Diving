@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -12,6 +14,7 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -119,8 +122,10 @@ def checkout(request):
         checkout_intent = stripe.checkout.Session.create(
             line_items=line_items_array,
             mode='payment',
-            success_url='{}checkout/checkout_success.html'.format(request.build_absolute_uri()),
-            cancel_url='{}checkout/checkout.html'.format(request.build_absolute_uri()),
+            success_url='{}checkout/checkout_success.html'.format
+                        (request.build_absolute_uri()),
+            cancel_url='{}checkout/checkout.html'.format
+                        (request.build_absolute_uri()),
         )
 
         if request.user.is_authenticated:

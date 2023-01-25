@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 
 def index(request):
     """ A view to return the index page """
@@ -19,6 +17,7 @@ def get_in_contact(request):
     """ A view to return the get_in_contact page """
 
     return render(request, 'home/get_in_contact.html')
+
 
 def message_sent(request):
     """ A view to return the message_sent page """

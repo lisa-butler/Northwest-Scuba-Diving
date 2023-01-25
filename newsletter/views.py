@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+     render, redirect, reverse, get_object_or_404
+)
 from .forms import NewsletterSignupForm
 from .models import Newsletter
 from profiles.models import UserProfile

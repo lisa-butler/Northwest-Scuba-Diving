@@ -40,4 +40,3 @@ def reviews(request):
         'reviews': reviews,
     }
     return render(request, 'reviews/reviews.html', context)
-
