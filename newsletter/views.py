@@ -7,6 +7,7 @@ from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib import messages
 
+
 def get_all_objects(model):
     queryset = model._meta.model.objects.all()
     return queryset
@@ -29,11 +30,17 @@ def newsletter(request):
                 newsletter_form = NewsletterSignupForm(form_data)
                 newsletterSignupRequest = newsletter_form.save(commit=False)
                 newsletterSignupRequest.save()
-                request.session['save_newsletter_request'] = 'save_newsletter_request' in request.POST
-                return redirect(reverse('newsletter_signup_success', args=[newsletterSignupRequest.email]))
+                request.session['save_newsletter_request'] = 'save_newsletter_request' in request.POST  # noqa
+                return redirect(
+                    reverse(
+                        'newsletter_signup_success',
+                        args=[newsletterSignupRequest.email]
+                    )
+                )
             else:
-                request.session['unsubscribe_newsletter_request'] = 'unsubscribe_newsletter_request' in request.POST
-                return redirect(reverse('newsletter_unsubscribe', args=[user_email]))
+                request.session['unsubscribe_newsletter_request'] = 'unsubscribe_newsletter_request' in request.POST  # noqa
+                return redirect(
+                    reverse('newsletter_unsubscribe', args=[user_email]))
         else:
             context = {'email': email_registered}
             return render(request, 'newsletter/newsletter.html', context)
@@ -50,16 +57,10 @@ def newsletter_signup_success(request, email):
     if request.user.is_authenticated:
         print("Got into signup sucess")
 
-    #     # if save_newsletter_request:
-    #     newsletter_form_data = {
-    #         'email': email,
-    #     }
-    #     newsletter_form = NewsletterSignupForm(newsletter_form_data, instance=newsletter)
-    #     if newsletter_form.is_valid():
-    #         newsletter_form.save()
-
-    messages.success(request, f'Sucessfully Signed up to Northwest Scuba Diving Newsletter! \
-        Your email address {email} has been signed up to our newsletter.')
+    messages.success(
+        request,
+        f'Sucessfully Signed up to Northwest Scuba Diving Newsletter! '
+        f'Your email address {email} has been signed up to our newsletter.')
 
     template = 'newsletter/newsletter_signup_success.html'
     # template = 'newsletter/newsletter_unsubscribe.html'
@@ -79,8 +80,11 @@ def newsletter_unsubscribe(request, email):
     if request.user.is_authenticated:
         newsletter.delete()
 
-    messages.success(request, f'Sucessfully unsubscribed from Northwest Scuba Diving Newsletter! \
-        Your email address {email} has been unsubscribed from our newsletter.')
+    messages.success(
+        request,
+        f'Sucessfully unsubscribed from Northwest Scuba Diving Newsletter! '
+        f'Your email address {email} has been unsubscribed '
+        'from our newsletter.')
 
     template = 'newsletter/newsletter_unsubscribe.html'
     context = {

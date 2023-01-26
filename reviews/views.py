@@ -18,7 +18,7 @@ def submit_review(request):
         if user_review_form.is_valid():
             reviewSubmit = user_review_form.save(commit=False)
             reviewSubmit.save(username=request.user)
-            request.session['save_review_submit'] = 'save-review-submit' in request.POST
+            request.session['save_review_submit'] = 'save-review-submit' in request.POST  # noqa
             return redirect(reverse('reviews'))
         else:
             messages.error(request, 'There was an error with your form. \

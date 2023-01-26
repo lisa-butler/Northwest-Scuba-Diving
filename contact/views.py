@@ -20,7 +20,7 @@ def contact(request):
             contactRequest = contact_form.save(commit=False)
             contactRequest.save()
 
-            request.session['save_contact_request'] = 'save_contact_request' in request.POST
+            request.session['save_contact_request'] = 'save_contact_request' in request.POST  # noqa
             return redirect(reverse('contact_request_success',
                             args=[contactRequest.ticket_number]))
         else:
@@ -51,8 +51,10 @@ def contact_request_success(request, ticket_number):
             if contact_form.is_valid():
                 contact_form.save()
 
-    messages.success(request, f'Message successfully sent! \
-        Your message about {contact.subject} has been sent. We will respond to {contact.email}.')
+    messages.success(
+        request,
+        f'Message successfully sent! Your message about {contact.subject} '
+        f'has been sent. We will respond to {contact.email}.')
 
     template = 'contact/contact_request_success.html'
     context = {

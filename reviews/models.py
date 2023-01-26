@@ -6,7 +6,9 @@ from django.shortcuts import get_object_or_404
 class UserReviewForm(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     review = models.TextField(max_length=400, null=False, blank=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_review', related_query_name='user_review')
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='user_review',
+        related_query_name='user_review')
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):

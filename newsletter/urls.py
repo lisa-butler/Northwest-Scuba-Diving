@@ -9,4 +9,3 @@ urlpatterns = [
          views.newsletter_unsubscribe, name='newsletter_unsubscribe'),
 
 ]
-
