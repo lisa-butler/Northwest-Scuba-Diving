@@ -35,7 +35,6 @@ https://dashboard.stripe.com/test/logs?method%5B0%5D=post&method%5B1%5D=delete&d
 ------------------------------------------------------------------
 ## User Experience
 
-<a name="ux"></a>
 ### **Pre project planning**
 
 I decided to create a dive school page to sell a service rather than goods as my ecommerce project as this is a domain that i know quite well. Knowing the domain means i knew what functionality the customer and admin would want avalible. There is no dive school in my area, though i have heard that there used to be one, so it was interesting to think of what could be offered if a dive school was to set up in the region.
@@ -186,8 +185,6 @@ Product management is a tool for the admin to add products into the database. Th
 
 
 ## Application Features
-
-<a name="ux"></a>
 
 ### **Index.html**
 
@@ -472,8 +469,6 @@ If I was to build this application again with the intentions of it being a live 
 
 ## Technologies Used
 
-<a name="tech"></a>
-
 ### **Languages**
 
 The languages used in this project were;
@@ -506,27 +501,27 @@ The full list of requirements can be seen in requirements.txt
 
 - asgiref==3.5.2
 - boto3==1.26.36
-botocore==1.29.36
-dj-database-url==0.5.0
-Django==3.2
-django-allauth==0.51.0
-django-countries==7.2.1
-django-crispy-forms==1.14.0
-django-storages==1.13.2
-django-truncate==0.1
-gunicorn==20.1.0
-jmespath==1.0.1
-oauthlib==3.2.2
-Pillow==9.3.0
-psycopg2==2.9.5
-PyJWT==2.6.0
-python-dotenv==0.21.0
-python3-openid==3.2.0
-pytz==2022.6
-requests-oauthlib==1.3.1
-s3transfer==0.6.0
-sqlparse==0.4.3
-stripe==5.0.0
+- botocore==1.29.36
+- dj-database-url==0.5.0
+- Django==3.2
+- django-allauth==0.51.0
+- django-countries==7.2.1
+- django-crispy-forms==1.14.0
+- django-storages==1.13.2
+- django-truncate==0.1
+- gunicorn==20.1.0
+- jmespath==1.0.1
+- oauthlib==3.2.2
+- Pillow==9.3.0
+- psycopg2==2.9.5
+- PyJWT==2.6.0
+- python-dotenv==0.21.0
+- python3-openid==3.2.0
+- pytz==2022.6
+- requests-oauthlib==1.3.1
+- s3transfer==0.6.0
+- sqlparse==0.4.3
+- stripe==5.0.0
 
 
 ### **Agile Development Process:**
@@ -606,7 +601,6 @@ I currently do not have functionality in place to send the user newsletters, how
 ------------------------------------------------------------------
 ## Troubleshooting and testing
 
-<a name="test"></a>
 
 ### **Troubleshooting:**
 
@@ -744,10 +738,8 @@ The application was also responsive on larger and smaller screens and worked on 
 * When the user is not logged in the option to login or register shows. &#9745;
 
 ------------------------------------------------------------------
-
 ## Bugs
 
-<a name="bugs"></a>
 
 ### **Bugs Found:**
 
@@ -762,8 +754,6 @@ There are hopefully no bugs present in the application now, if you happen to com
 
 ------------------------------------------------------------------
 ## Deployment
-
-<a name="deploy"></a>
 
 The live deployed application can be found at [Northwest Scuba Diving](https://northwest-scubadiving.herokuapp.com/).
 
@@ -1077,8 +1067,6 @@ Use this space to discuss any differences between the local version you've devel
 
 ## Credits and Acknowledgements
 
-<a name="credits"></a>
-
 ### **Credits:**
 
 * Code: Code advice was taken from Stack Overflow (https://stackoverflow.com/).
@@ -1102,8 +1090,6 @@ Use this space to discuss any differences between the local version you've devel
 ------------------------------------------------------------------
 
 ## Content and resources
-
-<a name="content"></a>
 
 * All content was written by the developer as part of an academic exercise for the Code Institute.
 * All images used are owned by the developer or permission has been granted for their usage.
