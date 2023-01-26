@@ -6,120 +6,52 @@ Use the space to discuss code validation for any of your own code files (where a
 You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
 
 
-
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-- If you are copying/pasting your HTML code, use this link: https://validator.w3.org/#validate_by_input
-- (*recommended*) If you are using the live deployed site pages, use this link: https://validator.w3.org/#validate_by_uri
-
-It's recommended to validate the live pages (each of them) using the deployed URL.
-This will give you a custom URL as well, which you can use on your testing documentation.
-It makes it easier to return back to a page to validate it again in the future.
-The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving%2Findex.html
-
-Sample HTML code validation documentation (tables are extremely helpful!):
-
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving%2Findex.html) | ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
-| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving%2Fcontact.html) | ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
-| Quiz | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving%2Fquiz.html) | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
-| Add Blog | n/a | ![screenshot](documentation/html-validation-add-blog.png) | Duplicate IDs found, and fixed |
-| Checkout | n/a | ![screenshot](documentation/html-validation-checkout.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining HTML files |
+| Index.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2F | ![index.html validated](documentation/testing/index-w3c.png) | Warning: Section lacks heading|
+|newsletter.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fnewsletter%2F | ![newsletter.html validated](documentation/testing/newsletter-w3c.png) | N/A |
+| newsletter_signup_success.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fnewsletter%2Fnewsletter_signup_success%2Fl.butler1993%40gmail.com | ![newsletter_signup_success.html validated](documentation/testing/newsletter-signup-success-w3c.png) | N/A |
+| newsletter_unsubscribe | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fnewsletter%2Fnewsletter_unsubscribe%2Fl.butler1993%40gmail.com | ![newsletter_unsubscribe.html validated](documentation/testing/newsletter-unsubscribe-w3c.png) | N/A |
+| add_product.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Fadd%2F | ![add_product.html validated](documentation/testing/add-product-w3c.png) | INFO: Trailing slash, WARNING: Lacks heading |
+| courses.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Fcourses%2F%3Fcategory%3Dcourses | ![courses.html validated](documentation/testing/courses-w3c.png) | N/A |
+| edit_product.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Fedit%2F9%2F | ![edit_product.html validated](documentation/testing/edit-product-w3c.png) | INFO: Trailing slash, WARNING: Lacks heading |
+| gear.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Fgear%2F%3Fcategory%3Dgear_rental | ![gear.html validated](documentation/testing/GEAR-W3C.png) | N/A |
+| orders.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Forders%2F | ![orders.html validated](documentation/testing/orders-w3c.png) | INFO: Trailing slash, WARNING: Lacks heading |
+| product_detail.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2F5%2F | ![product_detail.html validated](documentation/testing/product-details-w3c.png) | N/A |
+| qualified.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fproducts%2Fqualified%2F%3Fcategory%3Dqualified_diver | ![qualified.html validated](documentation/testing/qualified-w3c.png) | N/A |
+| profile.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fprofile%2F | ![profile.html validated](documentation/testing/profile-w3c.png) | INFO: Trailing slash, WARNING: Lacks heading |
+| reviews.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Freviews%2F | ![reviews.html validated](documentation/testing/reviews-w3c.png) | N/A |
+| submit_review.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Freviews%2Fsubmit_review | ![submit_review.html validated](documentation/testing/submit-review-w3c.png) | INFO: Trailing slash, WARNING: Lacks heading |
+| contact.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fcontact%2F | ![contact.html validated](documentation/testing/contact-w3c.png) | N/A |
+| contact_request_success.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fcontact%2Fcontact_request_success%2F8C45853228084254988539FD58BCB154 | ![contact_request_success.html validated](documentation/testing/contact-success-w3c.png) | N/A |
+| bag.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fbag%2F | ![bag.html validated](documentation/testing/bag-w3c.png) | N/A |
+| 404.html | https://validator.w3.org/nu/#textarea | ![404.html validated](documentation/testing/404-w3c.png) | N/A |
+| --- | --- | --- | --- |
 
-**IMPORTANT**: Python/Jinja syntax in HTML
-
-Python projects that use Jinja syntax, such as `{% for loops %}`, `{% url 'home' %}`, and `{{ variable|filter }}`
-will not validate properly if you're copying/pasting into the HTML validator.
-
-In order to properly validate these types of files, it's recommended to
-[validate by uri](https://validator.w3.org/#validate_by_uri) from the deployed Heroku pages.
-
-Unfortunately, pages that require a user to be logged-in and authenticated (CRUD functionality),
-will not work using this method, due to the fact that the HTML Validator (W3C) doesn't have
-access to login to your pages.
-In order to properly validate HTML pages with Jinja syntax for authenticated pages, follow these steps:
-
-- Navigate to the deployed pages which require authentication
-- Right-click anywhere on the page, and select **View Page Source** (usually `CTRL+U` or `⌘+U` on Mac).
-- This will display the entire "compiled" code, without any Jinja syntax.
-- Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
-- Repeat this process for every page that requires a user to be logged-in/authenticated.
 
 ### CSS
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
-
-- If you are copying/pasting your HTML code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-- (*recommended*) If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-
-It's recommended to validate the live site if you only have a single CSS file using the deployed URL.
-This will give you a custom URL as well, which you can use on your testing documentation.
-It makes it easier to return back to the page to validate it again in the future.
-The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving
-
-If you have multiple CSS files, then individual [validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)
-is recommended for the additional CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using extras like Bootstrap, Materialize, Font Awesome, then sometimes the validator
-will attempt to also validate this code, even if it's not part of your own actual code.
-You are not required to validate the external libraries or frameworks!
-
-Sample CSS code validation documentation (tables are extremely helpful!):
+I have used the recommended [Kigsaw Validator](https://jigsaw.w3.org/css-validator/validator) to validate all of my CSS files.
 
 | File | Jigsaw URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flisa-butler.github.io%2FNorthwest-Scuba-Diving) | ![screenshot](documentation/css-validation-style.png) | Pass: No Errors |
-| checkout.css | n/a | ![screenshot](documentation/css-validation-checkout.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining CSS files |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![CSS Validation](documentation/testing/css-validated.png) | Pass: No Errors |
+| checkout.css | n/a | ![Jigsaw](documentation/testing/checkout-css-jigsaw.png) | Pass: No Errors |
+| --- | --- | --- | --- |
 
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
-If using modern JavaScript (ES6) methods, then make sure to include the following
-line at the very top of every single JavaScript file (this should remain in your files for submission):
-
-`/* jshint esversion: 11 */`
-
-If you are also including jQuery (`$`), then the updated format will be:
-
-`/* jshint esversion: 11, jquery: true */`
-
-This allows the JShint validator to recognize modern ES6 methods, such as:
-`let`, `const`, `template literals`, `arrow functions (=>)`, etc.
-
-**IMPORTANT**: External resources
-
-Sometimes we'll write JavaScript that imports variables from other files, such as an array of questions
-from `questions.js`, which are used within the main `script.js` file elsewhere.
-If that's the case, the JShint validation tool doesn't know how to recognize unused variables
-that would normally be imported locally in your code.
-These warnings are acceptable to showcase on your screenshots.
-
-The same thing applies when using external libraries such as Stripe, Leaflet, Bootstrap, Materialize, etc..
-To instantiate these components, we need to use their respective declarator.
-Again, the JShint validation tool would flag these as undefined/unused variables.
-These warnings are acceptable to showcase on your screenshots.
-
-Sample JS code validation documentation (tables are extremely helpful!):
-
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js | ![screenshot](documentation/js-validation-script.png) | Unused variables from external files |
-| questions.js | ![screenshot](documentation/js-validation-questions.png) | Pass: No Errors |
-| quiz.js | ![screenshot](documentation/js-validation-quiz.png) | Unused variables from external files |
-| stripe_elements.js | ![screenshot](documentation/js-validation-stripe.png) | Undefined Stripe variable |
-| x | x | x | repeat for all remaining JavaScript files |
+| stripe_elements.js | ![screenshot](documentation/testing/stripe-elements-jshint.png) | Unidentified Variable: Stripe |
+| countryfield.js | ![screenshot](documentation/testing/countryfield-jshint.png) | Pass: No Errors |
+
 
 ### Python
 
@@ -202,12 +134,51 @@ Sample Python code validation documentation (tables are extremely helpful!):
 
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| run.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/run.py) | ![screenshot](documentation/py-validation-run.png) | W291 trailing whitespace |
-| settings.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/boutique-ado/settings.py) | ![screenshot](documentation/py-validation-settings.png) | E501 line too long |
-| Blog views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/blog/views.py) | ![screenshot](documentation/py-validation-blog-views.png) | Pass: No Errors |
-| Checkout urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/checkout/urls.py) | ![screenshot](documentation/py-validation-checkout-urls.png) | W292 no newline at end of file |
-| Profiles models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/profiles/models.py) | ![screenshot](documentation/py-validation-profiles-models.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining Python files |
+| BAG contexts.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/bag/contexts.py) | ![screenshot](documentation/testing/bag-contexts.png) | No Errors |
+| BAG urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/bag/urls.py) | ![screenshot](documentation/testing/bag-urls.png) | No Errors |
+| BAG views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/bag/views.py) | ![screenshot](documentation/testing/bag-views.png) | No Errors |
+| ChECKOUT admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/a.py) | ![screenshot](documentation/testing/checkout-admin.png) | No Errors |
+| CHECKOUT forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/forms.py) | ![screenshot](documentation/testing/checkout-forms.png) | No Errors |
+| CHECKOUT models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/models.py) | ![screenshot](documentation/testing/checkout-models.png) | No Errors |
+| CHECKOUT signals.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/signals.py) | ![screenshot](documentation/testing/checkout-signals.png) | No Errors |
+| CHECKOUT urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/urls.py) | ![screenshot](documentation/testing/checkout-urls.png) | No Errors |
+| CHECKOUT views.py| [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/views.py) | ![screenshot](documentation/testing/checkout-views.png) | No Errors |
+| CHECKOUT webhook_handler.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/webhook_handler.py) | ![screenshot](documentation/testing/checkout-webhook-handler.png) | No Errors |
+| CHECKOUT webhooks.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/checkout/webhooks.py) | ![screenshot](documentation/testing/checkout-webhooks.png) |  |
+| CONTACT admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/contact/admin.py) | ![screenshot](documentation/testing/contact-admin.png) | No Errors |
+| CONTACT forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/contact/forms.py) | ![screenshot](documentation/testing/contact-forms.png) | No Errors |
+| CONTACT models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/contact/models.py) | ![screenshot](documentation/testing/contact-models.png) | No Errors |
+| CONTACT urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/contact/urls.py) | ![screenshot](documentation/testing/contact-urls.png) | No Errors |
+| CONTACT views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/contact/views.py) | ![screenshot](documentation/testing/contact-views.png) | No Errors |
+| HOME urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/home/urls.py) | ![screenshot](documentation/testing/home-urls.png) | No Errors |
+| HOME views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/home/views.py) | ![screenshot](documentation/testing/home-views.png) | No Errors |
+| NEWSLETTER forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/newsletter/forms.py) | ![screenshot](documentation/testing/newsletter-forms.png) | No Errors |
+| NEWSLETTER models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/newsletter/models.py) | ![screenshot](documentation/testing/newsletter-models.png) | No Errors |
+| NEWSLETTER urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/newsletter/urls.py) | ![screenshot](documentation/testing/newsletter-urls.png) | No Errors |
+| NEWSLETTER views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/newsletter/views.py) | ![screenshot](documentation/testing/newsletter-views.png) | No Errors |
+| NORTHWEST SCUBADIVING settings.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/northwest_scuba_diving/settings.py) | ![screenshot](documentation/testing/test-settings.png) | No Errors |
+| NORTHWEST SCUBADIVING urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/northwest_scuba_diving/urls.py) | ![screenshot](documentation/testing/nwsd-urls.png) | No Errors |
+| NORTHWEST SCUBADIVING views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/northwest_scuba_diving/views.py) | ![screenshot](documentation/testing/nwsd-views.png) | No Errors |
+| PRODUCTS admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/admin.py) | ![screenshot](documentation/testing/products-admin.png) | No Errors |
+| PRODUCTS forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/froms.py) | ![screenshot](documentation/testing/products-forms.png) | No Errors |
+| PRODUCTS models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/models.py) | ![screenshot](documentation/testing/products-models.png) | No Errors |
+| PRODUCTS urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/urls.py) | ![screenshot](documentation/testing/products-urls.png) | No Errors |
+| PRODUCTS views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/views.py) | ![screenshot](documentation/testing/products-views.png) | No Errors |
+| PRODUCTS widgets.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/products/widgets.py) | ![screenshot](documentation/testing/products-widgets.png) | No Errors |
+| PROFILES admin.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/profiles/admin.py) | ![screenshot](documentation/testing/profiles-admin.png) | No Errors |
+| PROFILES forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/profiles/forms.py) | ![screenshot](documentation/testing/profiles-forms.png) | No Errors |
+| PROFILES models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/profiles/models.py) | ![screenshot](documentation/testing/profiles-models.png) | No Errors |
+| PROFILES urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/profiles/urls.py) | ![screenshot](documentation/testing/profiles-urls.png) | No Errors |
+| PROFILES views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/profiles/views.py) | ![screenshot](documentation/testing/profiles-views.png) | No Errors |
+| REVIEWS forms.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/forms.py) | ![screenshot](documentation/testing/reviews-forms.png) | No Errors |
+| REVIEWS models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/models.py) | ![screenshot](documentation/testing/reviews-models.png) | No Errors |
+| REVIEWS urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/urls.py) | ![screenshot](documentation/testing/reviews-urls.png) | No Errors |
+| REVIEWS views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/views.py) | ![screenshot](documentation/testing/reviews-views.png) | No Errors |
+
+
+
+
+
 
 ## Browser Compatibility
 
