@@ -51,86 +51,13 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | --- | --- | --- |
 | stripe_elements.js | ![screenshot](documentation/testing/stripe-elements-jshint.png) | Unidentified Variable: Stripe |
 | countryfield.js | ![screenshot](documentation/testing/countryfield-jshint.png) | Pass: No Errors |
+| --- | --- | --- |
 
 
 ### Python
 
 I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
-The CI Python Linter can be used two different ways.
-- Copy/Paste your Python code directly into the linter.
-- As an API, using the "raw" URL appended to the linter URL.
-    - To find the "raw" URL, navigate to your file directly on the GitHub repo.
-    - On that page, GitHub provides a button on the right called "Raw" that you can click on.
-    - From that new page, copy the full URL, and paste it after the CI Python Linter URL (with a `/` separator).
-    - Examples:
-
-    | File | CI URL | Raw URL | Combined |
-    | --- | --- | --- | --- |
-    | PP3 *run.py* file | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/run.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/run.py |
-    | Boutique Ado *settings.py* | `https://pep8ci.herokuapp.com/` | `https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/boutique_ado/settings.py` | https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/northwest-scuba-diving/main/boutique_ado/settings.py |
-
-It's recommended to validate each file using the API URL.
-This will give you a custom URL which you can use on your testing documentation.
-It makes it easier to return back to a file to validate it again in the future.
-Use the steps above to generate your own custom URLs for each Python file.
-
-**IMPORTANT**: Django settings.py
-
-The Django settings.py file comes with 4 lines that are quite long, and will throw the `E501 line too long` error.
-This is default behavior, but can be fixed by adding `# noqa` to the end of those lines.
-
-`noqa` = **NO Quality Assurance**
-
-Example:
-
-```python
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa
-    },
-]
-```
-
-**NOTE**: You must include 2 *spaces* before the `#`, and 1 *space* after the `#`.
-
-Do not use `# noqa` all over your project just to clear down validation errors!
-This can still cause a project to fail, for failing to fix actual PEP8 validation errors.
-
-Sometimes strings or variables get too long, or long `if` conditional statements.
-These are acceptable instances to use the `# noqa`.
-
-When trying to fix "line too long" errors, try to avoid using `/` to split lines.
-A better approach would be to use any type of opening bracket, and hit Enter just after that.
-Any opening bracket type will work: `(`, `[`, `{`.
-By using an opening bracket, Python knows where to appropriately indent the next line of code,
-without having to "guess" yourself and attempt to tab to the correct indentation level.
-
-Example:
-
-```python
-return HttpResponse(
-    content=(
-        f'Webhook received: {event["type"]} | '
-        'SUCCESS: Verified order already in database'),
-    status=200)
-```
-
-**IMPORTANT**: migration and pycache files
-
-You do not have to ever validate files from the `migrations/` or `pycache/` folders!
-Ignore these `.py` files, and validate just the files that you've created or modified.
-
-Sample Python code validation documentation (tables are extremely helpful!):
 
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -174,105 +101,109 @@ Sample Python code validation documentation (tables are extremely helpful!):
 | REVIEWS models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/models.py) | ![screenshot](documentation/testing/reviews-models.png) | No Errors |
 | REVIEWS urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/urls.py) | ![screenshot](documentation/testing/reviews-urls.png) | No Errors |
 | REVIEWS views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/views.py) | ![screenshot](documentation/testing/reviews-views.png) | No Errors |
-
-
-
-
+| --- | --- | --- | --- |
 
 
 ## Browser Compatibility
 
-Use this space to discuss testing the live/deployed site on various browsers.
+Browser compatability was checked using both my own device (an Acer Aspire A514-52) which is running Google Chrome and with **[BrowserStack](https://www.browserstack.com/)**.
 
-Consider testing at least 3 different browsers, if available on your system.
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-Some of these are paid services, but some are free.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-Sample browser testing documentation:
+Compatability was confirmed on the following;
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browser-chrome.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browser-firefox.png) | Works as expected |
-| Edge | ![screenshot](documentation/browser-edge.png) | Works as expected |
-| Safari | ![screenshot](documentation/browser-safari.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browser-brave.png) | Works as expected |
-| Opera | ![screenshot](documentation/browser-opera.png) | Minor differences |
-| Internet Explorer | ![screenshot](documentation/browser-iex.png) | Does not work as expected |
-| x | x | repeat for any other tested browsers |
+| Chrome | ![Chrome testing](documentation/testing/chrome-testing.png) | Works as expected |
+| Firefox | ![Firefox testing](documentation/testing/firefox-testing.png) | Works as expected |
+| Edge | ![Microsoft edge testing](documentation/testing/ms-edge-testing.png) | Works as expected |
+| Safari | Tested on Browserstack | Minor CSS differences |
+| Opera | Tested on Browserstack | Minor differences |
+| --- | --- | --- |
 
-## Responsiveness
 
-Use this space to discuss testing the live/deployed site on various device sizes.
+Compatabilty with both Android and IOS devices was checked as well.
 
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
 
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
+**Performance Testing:**
 
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
+Performace testing was checked using Google Lighthouse also with a very good result.
 
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
+![Performance testing](documentation/testing/performance-testing.png)
 
-Sample responsiveness testing documentation:
+**Responsivness:**
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
 | Device | Screenshot | Notes |
 | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive-mobile.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive-tablet.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsive-desktop.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsive-xl.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsive-4k.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsive-iphone.png) | Works as expected |
-| x | x | repeat for any other tested sizes |
+| Mobile Iphone X (BrowserStack) | ![Responsivness test on a Iphone X](documentation/testing/responsive-iphonex.png) | Works as expected |
+| Mobile Samsugng Galaxy Note 10 (BrowserStack) | ![Responsivness test on a Samsung Galaxy Note 10](documentation/testing/responsive-galaxynote10.png) | Works as expected |
+| Tablet (BrowserStack) | ![Responsivness test on an Ipad Pro](documentation/testing/responsive-ipadpro.png) | Works as expected |
+| Desktop | ![Desktop testing](documentation/testing/chrome-testing.png) | Works as expected |
+
+The application was also responsive on larger and smaller screens and worked on different devices and browsers.
+
+
+**Manual Testing:**
+
+### Testing links and forms:
+
+* Navigation links are working and bring the user to the correct page. &#9745;
+* The home page "Courses” and "Dives" links are working and take user to the correct pages. &#9745;
+* The social media links all work and take users to the correct social media. &#9745;
+* The title of the page "Northwest Scuba Diving" works as a link to return the user to home. &#9745;
+* Login and logout functionality works correctly. &#9745;
+* The registration form has error handling built in so the user must make the correct inputs.&#9745;
+* The forms all redirect appropriately. &#9745;
+* Email confirmation is working correctly. &#9745;
+* Customers Orders are updating when a user makes an order, displaying the new order. &#9745;
+* Newsletter subscribe and unsubscribe functionality is working correctly. &#9745;
+
+
+### Testing security elements:
+
+* When the user is not logged in they sign up for the newsletter or submit a review. &#9745;
+* The user cannot create multiple accounts with the same email or username. &#9745;
+* The user can edit and delete items in their basket. &#9745;
+* The user cannot subscribe for the newsletter multiple times with the same email. &#9745;
+* The user cannot subscribe someone else to the newsletter. &#9745;
+* The admin of the site can see all orders that have been placed, those without admin privelages cannot see this. &#9745;
+* The site admin can add and edit products, those without admin status cannot do this. &#9745;
+
+### Testing other elements:
+
+* Images when used loaded correctly. &#9745;
+* Product images load correctly and appropriately for thir assigned product. &#9745;
+* Navigation of the application is intuitive. &#9745;
+* When the user is logged in the options change from login or register to my profile, newsletter and logout. &#9745;
+* When the user is not logged in the option to login or register shows. &#9745;
+
 
 ## Lighthouse Audit
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](documentation/lighthouse-home-mobile.png) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-home-desktop.png) | Few warnings |
-| About | Mobile | ![screenshot](documentation/lighthouse-about-mobile.png) | Some minor warnings |
-| About | Desktop | ![screenshot](documentation/lighthouse-about-desktop.png) | Few warnings |
-| Gallery | Mobile | ![screenshot](documentation/lighthouse-gallery-mobile.png) | Slow response time due to large images |
-| Gallery | Desktop | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Home | Desktop | ![screenshot](documentation/testing/lighthouse%20testing.png) | Few warnings |
+| Bag | Desktop | ![screenshot](documentation/testing/lighthouse-bag.png) | Few warnings |
+| Contact | Desktop | ![screenshot](documentation/testing/lighthouse-contact.png) | Few warnings |
+| Products | Desktop | ![screenshot](documentation/testing/lighthouse-products.png) | Few warnings |
+| Reviews | Desktop | ![screenshot](documentation/testing/lighthouse-reviews.png) | Few warnings |
+
+The same reoccuring issues were seen throughout. They were minor so not dealt with for this submission. However if the site were to be a live site, i would apply some more time to fix them.
+
+**Accessibility Testing:**
+
+Accessibility testing was done through Google LightHouse. The result was 95%. The only issue noted being that the background and foreground do not have sufficenient contrast in some small areas.I chose to leave this as it was in very minor areas.
+
+![Accessibility test](documentation/testing/accessibility-testing.png)
+
+Areas with known errors can be seen below
+
+![Accessibility Errors](documentation/testing/accessibility-errors.png)
+
 
 ## Defensive Programming
 
@@ -350,18 +281,35 @@ Most of your project's **features** should already align with the **user stories
 so this should as simple as creating a table with the user story, matching with the re-used screenshot
 from the respective feature.
 
-| User Story | Screenshot |
-| --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+As a customer i want to be able to checkout and purchase my items so that i can complete my transaction on this site. &#9745;
+As a customer i can view my order history in my account so that i can keep track of my orders. &#9745;
+As a customer i want to be able to log into my account so that the checkout experience is faster and so that i can see my orders. &#9745;
+As a customer i want to receive confirmation that my order has been taken so that i know that my payment has gone through. &#9745;
+As a customer i want to be able to remove items from my cart so that i can discard items i do not wish to purchase. &#9745;
+As a customer i want to be able to add items (dive trips/packages etc) to my cart so that i can add several things before checking out. &#9745;
+As a customer i want to be able to read detailed and concise information about the available options so that i can make an informed choice about my purchase. &#9745;
+As a customer, I want to be able to browse the available dive trips/training/packages to find the one best suited to my needs/wants. &#9745;
+
+### New Site Users
+
+- As a new site user, I would like to register for an account, so that I can save my details to make checkout smoother. &#9745;
+- As a new site user, I would like to register for an account, so that I can login and view my orders. &#9745;
+- As a new site user, I would like to be able to see reviews, so that I can decide if i want to dive with this dive school. &#9745;
+- As a new site user, I would like to be able to contact the dive school, so that I can have my questions answered. &#9745;
+
+### Returning Site Users
+
+- As a returning site user, I would like to be able to sign in, so that I can view my previous orders. &#9745;
+- As a returning site user, I would like to be able to sign up for a newsletter, so that I can be kept updated about upcoming courses and dive trips. &#9745;
+- As a returning site user, I would like to unsubscribe from a newsletter, so that I can no longer recieve them. &#9745;
+- As a returning site user, I would like to be able to submit  review, so that I can review my experience at the dive school. &#9745;
+- As a returning site user, I would like to be able to contact the dive school, so that I can organise my dives/courses. &#9745;
+
+### Site Admin
+
+- As a site administrator, I should be able to view customers orders, so that I can take note of numbers signed up for courses/dives. &#9745;
+- As a site administrator, I should be able to add, remove and edit products, so that I can keep the avalible courses up to date and add things as they come up. &#9745;
+
 
 ## Bugs
 
