@@ -1,11 +1,7 @@
-Font used for main site header: Acme
-json formatter.org
-https://dashboard.stripe.com/test/logs?method%5B0%5D=post&method%5B1%5D=delete&direction%5B0%5D=self&direction%5B1%5D=connect_in&success=true&showIP=false
-
 # Northwest Scuba Diving
 ## Portfolio Project 5 - Ecommerce
 ### This ecommerce site was built for Portfolio Project Five of the Code Institutes Diploma in Software Development.
-### This ecommerce site was built to be a dive schools platform for allowing customers to get in contact to organsise dives and to purchase their diving experiences. The target customer base is people who are interested in learnig to dive and those who are already divers and want to dive in a different location.
+### This ecommerce site was built to be a dive schools platform for allowing customers to get in contact to organsise dives and to purchase their diving experiences. The target customer base is people who are interested in learning to dive and those who are already divers and want to dive in a different location.
 
 ------------------------------------------------------------------
 ### Lisa Butler
@@ -22,14 +18,14 @@ https://dashboard.stripe.com/test/logs?method%5B0%5D=post&method%5B1%5D=delete&d
 ------------------------------------------------------------------
 ## Contents
 
- 1. [User Experience](#ux)
- 2. [Application Features](#features)
- 3. [Technology Used](#tech)
- 4. [Testing](#testing)
- 5. [Bugs](#bugs)
- 6. [Deployment](#deploy)
- 7. [Credits](#credits)
- 8. [Content](#content)
+ 1. User Experience
+ 2. Application Features
+ 3. Technology Used
+ 4. Testing - In TESTING.md
+ 5. Bugs - In TESTING.md
+ 6. Deployment
+ 7. Credits
+ 8. Content
 
 
 ------------------------------------------------------------------
@@ -39,7 +35,7 @@ https://dashboard.stripe.com/test/logs?method%5B0%5D=post&method%5B1%5D=delete&d
 
 I decided to create a dive school page to sell a service rather than goods as my ecommerce project as this is a domain that i know quite well. Knowing the domain means i knew what functionality the customer and admin would want avalible. There is no dive school in my area, though i have heard that there used to be one, so it was interesting to think of what could be offered if a dive school was to set up in the region.
 Pre project planning involved developing user stories, wireframe mock ups, logic flow diagrams and researching some basic styling ideas.
-I also researched the software stack to use for this specific project. As it is Django based i was tied to using Django and Python, however, I looked into using React and various alternatives for Bootstrap. I ultimately ended up usiing Bootstrap and Djangos built in functionality. Styling relied heavily on inline Bootstrap styles, which was very effective.
+I also researched the software stack to use for this specific project. As it is Django based i was tied to using Django and Python, however, I looked into using React and various alternatives for Bootstrap. I ultimately ended up using Bootstrap and Djangos built in functionality. Styling relied heavily on inline Bootstrap styles, which was very effective.
 
 **Strategy:**
 
@@ -68,14 +64,19 @@ Determining what to include in this ecommerce site involved some research. I loo
 
 These were added into the Issues section on Github for effective project planning and moved on the projects board as i progressed through them.
 
- ![Issues](log/static/images/issues.jpg)
+------------------------------------------------------------------
 
-GitHub **[Issue Tracker](https://github.com/lisa-butler/My-Dive-Log/issues?q=is%3Aissue+is%3Aclosed)**
+GitHub **[Issue Tracker](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues?q=is%3Aissue+is%3Aclosed)**
+ ![Issues](documentation/screenshots/closed-issues.png)
 
-![Projects](log/static/images/projects.jpg)
 
-GitHub **[Projects Board](https://github.com/users/lisa-butler/projects/3)**
+------------------------------------------------------------------
 
+
+GitHub **[Projects Board](https://github.com/users/lisa-butler/projects/5)**
+![Projects](documentation/screenshots/projects.png)
+
+------------------------------------------------------------------
 
 ### **Style**
 
@@ -421,7 +422,7 @@ Customer orders is another admin only page. This page is a list of all customer 
 
 ### **sign in/ sign out/ register**
 
-Sign In, Sign Out and Register, as well as password recovery etc are all sourced form Allauth templates and as such look very similar throughout. I did not make massive styling changes to these templates but rather did some minor changes to the frequently utilised ones, such as sign in, sign out and register.
+Sign In, Sign Out and Register, as well as password recovery etc are all sourced form Allauth templates and as such look very similar throughout. I did not make massive styling changes to these templates but rather did some minor changes to the frequently utilised ones, such as sign in, sign out and register. I also checked that they were functioning correctly.
 
 ![Register](documentation/screenshots/signup.png)
 
@@ -464,6 +465,8 @@ If I was to build this application again with the intentions of it being a live 
 * A stock control counter to limit the number of a specific product avaliable. For example on one of the courses, limit the places in the course to a set number and once that many people have registered for the course, remove it from the products view.
 * A more extensive customers orders page for the admin. This would display the products and the total number of customers who have registered for it.
 * A gallery tab where users could share their photos with a comment about their dive.
+* Gear for sale page, this could be both new and second hand gear that could be purchased.
+* Chatbot - This was something i would have liked to incorporate in this current project.
 
 ------------------------------------------------------------------
 
@@ -598,161 +601,11 @@ I've created a mockup Facebook business account using the Balsamiq template prov
 I have incorporated a newsletter sign-up form on my application, to allow users to supply their
 email address if they are interested in recieving newsletters.
 I currently do not have functionality in place to send the user newsletters, however, this is something i would add in the future.
-------------------------------------------------------------------
-## Troubleshooting and testing
-
-
-### **Troubleshooting:**
-
-Troubleshooting was quite varied on this project as it involved quite a wide range of different technologies.
-The biggest issue i ran into was getting the webhook handlers and Stripe to work effectively.
-Stripe is now working well and recieveing orders correctly, after much ordeal.
-
-![Stripe](documentation/screenshots/stripe.png)
-
-There were some database related issues which were solved by googling how to clear databases etc.
-There were countless other small errors solved throughout the development of this application.
-Trouble shooting was managed using dev tools, printing to terminal and utilising a lot of googling. I also sought help from my mentor, classmates, tutor support and my friends working in software roles.
-
-**Error Handling and input control:**
-
-Input control was something i spent some time thinking about as there were many forms in this application.
-Forms like the signup form, require the correct parameters in their fields in order to accept the form. There must be an @ in the email field and the passwords must match and not be too similar to the username.
-There was also some checking the db for if the email and user already existed. This is done when a user tries to register. I also have a check in to make sure that the user doesnt create duplicate orders.
-When registering for the newsletter, there is a check to ensure the user is signed in, then to check if they are already subscribed.
-
-### **Testing:**
-
-**Code Validation:**
-
-HTML:
-Validated using **[W3C HTML Validator](https://validator.w3.org/)**
-
-![HTML validation](documentation/testing/html-validation.png)
-
-CSS:
-Validated using Jigsaw via **[W3C](https://jigsaw.w3.org/css-validator/#validate_by_input)**
-
-![CSS validation](documentation/testing/css-validated.png)
-
-Python:
-Validated using **[ExtendsClass Python tester](https://extendsclass.com/python-tester.html)**
-
-![Python validation](documentation/testing/python-validation.png)
-
-**Browser Compatibility:**
-
-Browser compatability was checked using both my own device (an Acer Aspire A514-52) which is running Google Chrome and with **[BrowserStack](https://www.browserstack.com/)**.
-
-Compatability was confirmed on the following;
-
-Google Chrome (tested on my own device) &#9745;
-
-![Chrome testing](documentation/testing/chrome-testing.png)
-
-Firefox (tested on my own device) &#9745;
-
-![Firefox testing](documentation/testing/firefox-testing.png)
-
-Microsoft Edge (tested on my own device) &#9745;
-
-![Microsoft edge testing](documentation/testing/ms-edge-testing.png)
-
-Opera (tested on BrowserStack) &#9745;
-
-Safari (tested on BrowserStack) &#9745;
-
-Compatabilty with both Android and IOS devices was checked as well.
-
-
-**Accessibility Testing:**
-
-Accessibility testing was done through Google LightHouse. The result was 95%. The only issue noted being that the background and foreground do not have sufficenient contrast in some small areas.I chose to leave this as it was in very minor areas.
-
-![Accessibility test](documentation/testing/accessibility-testing.png)
-
-Areas with known errors can be seen below
-
-![Accessibility Errors](documentation/testing/accessibility-errors.png)
-
-
-**Performance Testing:**
-
-Performace testing was checked using Google Lighthouse also with a very good result.
-
-![Performance testing](documentation/testing/performance-testing.png)
-
-**Responsivness:**
-
-Responsivness was also checked using **[BrowserStack](https://www.browserstack.com/)**. This showed the application to work on all screen sizes.
-
-### Testing reponsivness on an Ipad Pro
-Viewport: 1024x1366 Screen size: 12.9" Monitor size: 15.4"
-
-![Responsivness test on an Ipad Pro](documentation/testing/responsive-ipadpro.png)
-
-### Testing reponsivness on a Samsung Galaxy Note 10
-Viewport: 412x869 Screen size: 5.94" Monitor size: 15.4"
-
-![Responsivness test on a Samsung Galaxy Note 10](documentation/testing/responsive-galaxynote10.png)
-
-### Testing reponsivness on a Iphone X
-Viewport: 375x812 Screen size: 5.8" Monitor size: 15.4"
-
-![Responsivness test on a Iphone X](documentation/testing/responsive-iphonex.png)
-
-The application was also responsive on larger and smaller screens and worked on different devices and browsers.
-
-**Manual Testing:**
-
-### Testing links and forms:
-
-* Navigation links are working and bring the user to the correct page. &#9745;
-* The home page "Courses” and "Dives" links are working and take user to the correct pages. &#9745;
-* The social media links all work and take users to the correct social media. &#9745;
-* The title of the page "Northwest Scuba Diving" works as a link to return the user to home. &#9745;
-* Login and logout functionality works correctly. &#9745;
-* The registration form has error handling built in so the user must make the correct inputs.&#9745;
-* The forms all redirect appropriately. &#9745;
-* Email confirmation is working correctly. &#9745;
-* Customers Orders are updating when a user makes an order, displaying the new order. &#9745;
-* Newsletter subscribe and unsubscribe functionality is working correctly. &#9745;
-
-
-### Testing security elements:
-
-* When the user is not logged in they sign up for the newsletter or submit a review. &#9745;
-* The user cannot create multiple accounts with the same email or username. &#9745;
-* The user can edit and delete items in their basket. &#9745;
-* The user cannot subscribe for the newsletter multiple times with the same email. &#9745;
-* The user cannot subscribe someone else to the newsletter. &#9745;
-* The admin of the site can see all orders that have been placed, those without admin privelages cannot see this. &#9745;
-* The site admin can add and edit products, those without admin status cannot do this. &#9745;
-
-### Testing other elements:
-
-* Images when used loaded correctly. &#9745;
-* Product images load correctly and appropriately for thir assigned product. &#9745;
-* Navigation of the application is intuitive. &#9745;
-* When the user is logged in the options change from login or register to my profile, newsletter and logout. &#9745;
-* When the user is not logged in the option to login or register shows. &#9745;
 
 ------------------------------------------------------------------
-## Bugs
-
-
-### **Bugs Found:**
-
-I had a lot of issues regarding Stripe and Webhooks towards the end of the development. This took up most of a week to solve but ultimately was sucessful. The issues i was having were based around using outdated code and having some minor typos as well as a lack of knowledge of Stripes requirements. Before dealing with this error i did not have a form to gather the users address as i did not need it for my sites purposes, i had to implement a billing details form to solve the error with Stripe as this is a Stripe requirement.
-
-Other bugs i found were buttons directing wrong, the shopping bag not allowing checkout and the products diaplaying multiples.
-
-There were some initaial difficulties getting connected to the database, however these were quickly solved and clearing the database was needed as products files were altered and updated.
-
-
-There are hopefully no bugs present in the application now, if you happen to come across any, please email me at l.butler1993@gmail.com.
-
+## For Testing please see TESTING.md
 ------------------------------------------------------------------
+
 ## Deployment
 
 The live deployed application can be found at [Northwest Scuba Diving](https://northwest-scubadiving.herokuapp.com/).
@@ -1083,9 +936,9 @@ Use this space to discuss any differences between the local version you've devel
 
 ### **Acknowledgements:**
 
-- I would like to thank my Code Institute mentor, [Tim Nelson] for his support throughout the development of this project and for going above and beyond to ensure i was presenting my best work.
+- I would like to thank my Code Institute mentor, Tim Nelson, for his support throughout the development of this project and for going above and beyond to ensure i was presenting my best work.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank my classmates at the Code Institute who answered my questions and provided a comminity throughout this course.
+- I would like to thank my classmates at the Code Institute who answered my questions and provided a community throughout this course.
 - I would like to thank my software developer friends (Joshua Butler-senior dev at Overstock Ireland and Glenn Gilmartin-senior dev at Overstock Ireland) for their advice and patience.
 ------------------------------------------------------------------
 

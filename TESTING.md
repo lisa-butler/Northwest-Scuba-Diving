@@ -2,10 +2,6 @@
 
 ## Code Validation
 
-Use the space to discuss code validation for any of your own code files (where applicable).
-You are not required to validate external libraries/frameworks, such as imported Bootstrap, Materialize, Font Awesome, etc.
-
-
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
@@ -30,7 +26,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | contact_request_success.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fcontact%2Fcontact_request_success%2F8C45853228084254988539FD58BCB154 | ![contact_request_success.html validated](documentation/testing/contact-success-w3c.png) | N/A |
 | bag.html | https://validator.w3.org/nu/?doc=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2Fbag%2F | ![bag.html validated](documentation/testing/bag-w3c.png) | N/A |
 | 404.html | https://validator.w3.org/nu/#textarea | ![404.html validated](documentation/testing/404-w3c.png) | N/A |
-| --- | --- | --- | --- |
+
+------------------------------------------------------------------
 
 
 ### CSS
@@ -41,7 +38,8 @@ I have used the recommended [Kigsaw Validator](https://jigsaw.w3.org/css-validat
 | --- | --- | --- | --- |
 | style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnorthwest-scubadiving.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![CSS Validation](documentation/testing/css-validated.png) | Pass: No Errors |
 | checkout.css | n/a | ![Jigsaw](documentation/testing/checkout-css-jigsaw.png) | Pass: No Errors |
-| --- | --- | --- | --- |
+
+------------------------------------------------------------------
 
 ### JavaScript
 
@@ -51,8 +49,8 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | --- | --- | --- |
 | stripe_elements.js | ![screenshot](documentation/testing/stripe-elements-jshint.png) | Unidentified Variable: Stripe |
 | countryfield.js | ![screenshot](documentation/testing/countryfield-jshint.png) | Pass: No Errors |
-| --- | --- | --- |
 
+------------------------------------------------------------------
 
 ### Python
 
@@ -101,8 +99,8 @@ I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to 
 | REVIEWS models.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/models.py) | ![screenshot](documentation/testing/reviews-models.png) | No Errors |
 | REVIEWS urls.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/urls.py) | ![screenshot](documentation/testing/reviews-urls.png) | No Errors |
 | REVIEWS views.py | [CI PEP8](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/lisa-butler/Northwest-Scuba-Diving/main/reviews/views.py) | ![screenshot](documentation/testing/reviews-views.png) | No Errors |
-| --- | --- | --- | --- |
 
+------------------------------------------------------------------
 
 ## Browser Compatibility
 
@@ -119,17 +117,11 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Edge | ![Microsoft edge testing](documentation/testing/ms-edge-testing.png) | Works as expected |
 | Safari | Tested on Browserstack | Minor CSS differences |
 | Opera | Tested on Browserstack | Minor differences |
-| --- | --- | --- |
 
 
 Compatabilty with both Android and IOS devices was checked as well.
 
-
-**Performance Testing:**
-
-Performace testing was checked using Google Lighthouse also with a very good result.
-
-![Performance testing](documentation/testing/performance-testing.png)
+------------------------------------------------------------------
 
 **Responsivness:**
 
@@ -144,6 +136,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 The application was also responsive on larger and smaller screens and worked on different devices and browsers.
 
+------------------------------------------------------------------
 
 **Manual Testing:**
 
@@ -179,6 +172,7 @@ The application was also responsive on larger and smaller screens and worked on 
 * When the user is logged in the options change from login or register to my profile, newsletter and logout. &#9745;
 * When the user is not logged in the option to login or register shows. &#9745;
 
+------------------------------------------------------------------
 
 ## Lighthouse Audit
 
@@ -204,6 +198,13 @@ Areas with known errors can be seen below
 
 ![Accessibility Errors](documentation/testing/accessibility-errors.png)
 
+**Performance Testing:**
+
+Performace testing was checked using Google Lighthouse also with a very good result.
+
+![Performance testing](documentation/testing/performance-testing.png)
+
+------------------------------------------------------------------
 
 ## Defensive Programming
 
@@ -213,82 +214,97 @@ When building projects that accept user inputs or forms, you should always test 
 Examples of this could include (not limited to):
 
 Forms:
-- Users cannot submit an empty form
-- Users must enter valid email addresses
+- Users cannot submit an empty form &#9745;
+- Users must enter valid email addresses &#9745;
+- Users cannot sign the same email address up to the newsletter twice &#9745;
+- Users cannot submit a review without being logged in &#9745;
 
 PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
+- Users must enter a valid letter/word/string when prompted for login purposes &#9745;
+- Users must choose from a specific list only &#9745;
 
-Flask/Django:
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
+Django:
+- Users cannot brute-force a URL to navigate to a restricted page &#9745;
+- Users cannot perform CRUD functionality while logged-out &#9745;
+- User-A can not manipulate data belonging to User-B, or vice versa &#9745;
+- Non-Authenticated users can not not access pages that require authentication &#9745;
+- Standard users cannot access pages intended for superusers &#9745;
 
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
 
-You should include any manual tests performed, and the expected results/outcome.
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
+| Page | User Action | Expected Result | Pass/Fail | Status |
 | --- | --- | --- | --- | --- |
 | Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery Page | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
+| | Click on Logo | Redirection to Home page | Pass | &#9745; |
+| | Click on Home link in navbar | Redirection to Home page | Pass | &#9745; |
+| | Click on Courses Button | Redirection to Courses page | Pass | &#9745; |
+| | Click on Dive Button | Redirection to Dives page | Pass | &#9745; |
+| | Click on Newsletter | Redirection to Newsletter page | Pass | &#9745;|
+| | Click on Contact Button | Redirection to contact page | Pass | &#9745; |
+| | Click on Diving Ireland | Redirection to external diving.ie page | Pass | &#9745; |
+| | Click on social network icon | Redirection to external page as expected | Pass | &#9745; |
+| Products Page | | | | |
+| | Products pages | Click on any product | Redirects to product detail view | Pass | &#9745; |
+| | Click on any product category in navbar | Redirection to specific category page | Pass | &#9745; |
+| | Click on add to basket | Adds to basket and toast confirmation appropriate | Pass | &#9745; |
 | Contact Page | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
+| | Click on Contact link in navbar | Redirection to Contact page | Pass | &#9745; |
+| | Enter name | Field will accept freeform text | Pass | &#9745; |
+| | Enter valid email address | Field will only accept email address format | Pass | &#9745; |
+| | Enter subject in textarea | Field will accept freeform text | Pass | &#9745; |
+| | Enter message in textarea | Field will accept freeform text | Pass | &#9745; |
+| | Click the Submit button | Redirects user to form-dump | Pass | &#9745; |
+| Reviews Page | | | | |
+| | Click on Reviews link in navbar | Redirection to Reviews page | Pass | &#9745; |
+| | Click button to write a review | Redirects to form | Pass | &#9745; |
+| | Enter title | Field will accept freeform text | Pass | &#9745; |
+| | Enter review in textarea | Field will accept freeform text | Pass | &#9745; |
+| | Click the Submit button | Redirects user to form-dump | Pass | &#9745; |
+| Register | | | | |
+| | Click on Register button | Redirection to Register page | Pass | &#9745; |
+| | Enter valid email address | Field will only accept email address format | Pass | &#9745; |
+| | Enter valid username| Field will only accept texts, not spaces | Pass | &#9745; |
+| | Enter valid password (twice) | Field will only accept password format | Pass | &#9745; |
+| | Click on Sign Up button | Asks user to confirm email page, user is sent an email | Pass | &#9745; |
+| | Confirm email | Redirects user to confirm your email page | Pass | &#9745; |
 | Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
+| | Click on the Login link | Redirection to Login page | Pass | &#9745; |
+| | Enter valid email address | Field will only accept email address format | Pass | &#9745; |
+| | Enter valid password | Field will only accept password format | Pass | &#9745; |
+| | Click Login button | Redirects user to home page | Pass | &#9745; |
 | Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
+| | Click Logout button | Redirects user to logout page, confirms logout | Pass | &#9745; |
+| | Click Confirm Logout button | Redirects user to home page | Pass | &#9745; |
 | Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| | Click on Profile button | User will be redirected to the Profile page | Pass | &#9745; |
+| | Click on form fields| User will be able to edit details | Pass | &#9745; |
+| | Click on update button| User details will be updated | Pass | &#9745; |
+| | Click on any order| User will be redirected to the order confirmed page for that order | Pass | &#9745; |
+| Product management | | | | |
+| | Click on Product management button | User will be redirected to the product management page | Pass | &#9745; |
+| | Click on form fields| User will be able to enter details | Pass | &#9745; |
+| | Click on add image| User will be able to select an image | Pass | &#9745; |
+| | Click on add product| Details will be saved and product added | Pass | &#9745; |
+| | Must be superuser| Users who are not superusers cannot view this page | Pass | &#9745; |
+| Customers orders | | | | |
+| | Click on Customers orders | User will be redirected to the Customers orders page | Pass | &#9745; |
+| | Click on home button| User is taken to home | Pass | &#9745; |
+| | Must be superuser| Users who are not superusers cannot view this page | Pass | &#9745; |
 
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
+------------------------------------------------------------------
 
 ## User Story Testing
 
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-As a customer i want to be able to checkout and purchase my items so that i can complete my transaction on this site. &#9745;
-As a customer i can view my order history in my account so that i can keep track of my orders. &#9745;
-As a customer i want to be able to log into my account so that the checkout experience is faster and so that i can see my orders. &#9745;
-As a customer i want to receive confirmation that my order has been taken so that i know that my payment has gone through. &#9745;
-As a customer i want to be able to remove items from my cart so that i can discard items i do not wish to purchase. &#9745;
-As a customer i want to be able to add items (dive trips/packages etc) to my cart so that i can add several things before checking out. &#9745;
-As a customer i want to be able to read detailed and concise information about the available options so that i can make an informed choice about my purchase. &#9745;
-As a customer, I want to be able to browse the available dive trips/training/packages to find the one best suited to my needs/wants. &#9745;
+### Users
+- As a customer i want to be able to checkout and purchase my items so that i can complete my transaction on this site. &#9745;
+- As a customer i can view my order history in my account so that i can keep track of my orders. &#9745;
+- As a customer i want to receive confirmation that my order has been taken so that i know that my payment has gone through. &#9745;
+- As a customer i want to be able to remove items from my cart so that i can discard items i do not wish to purchase. &#9745;
+- As a customer i want to be able to add items (dive trips/packages etc) to my cart so that i can add several things before checking out. &#9745;
+- As a customer i want to be able to read detailed and concise information about the available options so that i can make an informed choice about my purchase. &#9745;
+- As a customer, I want to be able to browse the available dive trips/training/packages to find the one best suited to my needs/wants. &#9745;
 
 ### New Site Users
 
@@ -310,112 +326,34 @@ As a customer, I want to be able to browse the available dive trips/training/pac
 - As a site administrator, I should be able to view customers orders, so that I can take note of numbers signed up for courses/dives. &#9745;
 - As a site administrator, I should be able to add, remove and edit products, so that I can keep the avalible courses up to date and add things as they come up. &#9745;
 
+------------------------------------------------------------------
+
+### **Troubleshooting:**
+
+Troubleshooting was quite varied on this project as it involved quite a wide range of different technologies.
+The biggest issue i ran into was getting the webhook handlers and Stripe to work effectively.
+Stripe is now working well and recieveing orders correctly, after much ordeal.
+
+![Stripe](documentation/screenshots/stripe.png)
+
+There were some database related issues which were solved by googling how to clear databases etc.
+There were countless other small errors solved throughout the development of this application.
+Trouble shooting was managed using dev tools, printing to terminal and utilising a lot of googling. I also sought help from my mentor, classmates, tutor support and my friends working in software roles.
+
+------------------------------------------------------------------
 
 ## Bugs
 
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
+I had a lot of issues regarding Stripe and Webhooks towards the end of the development. This took up most of a week to solve but ultimately was sucessful. The issues i was having were based around using outdated code and having some minor typos as well as a lack of knowledge of Stripes requirements. Before dealing with this error i did not have a form to gather the users address as i did not need it for my sites purposes, i had to implement a billing details form to solve the error with Stripe as this is a Stripe requirement.
 
-For JavaScript and Python applications, it's best to screenshot the errors to include them as well.
+Other bugs i found were buttons directing wrong, the shopping bag not allowing checkout and the products diaplaying multiples.
 
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
+There were some initaial difficulties getting connected to the database, however these were quickly solved and clearing the database was needed as products files were altered and updated.
 
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
+On manual testing i sent a link to the live Heroku site to a friend with an Apple Macbook. He had issues regarding the redirect when logging in. On hitting login he was encountering a 500 error. I tried to replicate this myself but couldnt. I searched the logs on Heroku and saw no mention of this error being flagged at all. With no furher knowledge on this error i couldnt begin to try and fix it.
 
-    ![screenshot](documentation/bug01.png)
+Other than this one rogue issue that i couldnt begin to fix, the entire application is now working as intended to the best of my rigorous manual testing.
 
-    - To fix this, I _____________________.
+There are hopefully no bugs present in the application now, if you happen to come across any, please email me at l.butler1993@gmail.com.
 
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
-
-    ![screenshot](documentation/bug02.png)
-
-    - To fix this, I _____________________.
-
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bug04.png)
-
-    - To fix this, I _____________________.
-
-### GitHub **Issues**
-
-An improved way to manage bugs is to use the built-in **Issues** tracker on your GitHub repository.
-To access your Issues, click on the "Issues" tab at the top of your repository.
-Alternatively, use this link: https://github.com/lisa-butler/Northwest-Scuba-Diving/issues
-
-If using the Issues tracker for your bug management, you can simplify the documentation process.
-Issues allow you to directly paste screenshots into the issue without having to first save the screenshot locally,
-then uploading into your project.
-
-You can add labels to your issues (`bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s).
-
-Once you've sorted the issue, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following format:
-
-**Fixed Bugs**
-
-All previously closed/fixed bugs can be tracked [here](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues?q=is%3Aissue+is%3Aclosed).
-
-| Bug | Status |
-| --- | --- |
-| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues/1) | Closed |
-| [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues/2) | Closed |
-| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues/3) | Closed |
-
-**Open Issues**
-
-Any remaining open issues can be tracked [here](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues).
-
-| Bug | Status |
-| --- | --- |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues/4) | Open |
-| [Python `E501 line too long` (93 > 79 characters)](https://github.com/lisa-butler/Northwest-Scuba-Diving/issues/5) | Open |
-
-## Unfixed Bugs
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-There are no remaining bugs that I am aware of.
+------------------------------------------------------------------
