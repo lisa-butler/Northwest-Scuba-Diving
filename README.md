@@ -16,6 +16,14 @@
 **[Repository](https://github.com/lisa-butler/Northwest-Scuba-Diving)**
 
 ------------------------------------------------------------------
+For your convienienece a superuser account has been setup using Temp Mail
+
+- Username: Assessor-Access
+- Password: diving123
+- Temp Mail Address: xipagij721@bymercy.com
+
+
+------------------------------------------------------------------
 ## Contents
 
  1. User Experience
