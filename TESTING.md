@@ -350,9 +350,22 @@ Other bugs i found were buttons directing wrong, the shopping bag not allowing c
 
 There were some initaial difficulties getting connected to the database, however these were quickly solved and clearing the database was needed as products files were altered and updated.
 
-On manual testing i sent a link to the live Heroku site to a friend with an Apple Macbook. He had issues regarding the redirect when logging in. On hitting login he was encountering a 500 error. I tried to replicate this myself but couldnt. I searched the logs on Heroku and saw no mention of this error being flagged at all. With no furher knowledge on this error i couldnt begin to try and fix it.
+On manual testing i sent a link to the live Heroku site to a friend with an Apple Macbook. He had issues regarding the redirect when logging in. On hitting login he was encountering a 500 error.
 
-Other than this one rogue issue that i couldnt begin to fix, the entire application is now working as intended to the best of my rigorous manual testing.
+![Login error](documentation/screenshots/error-accounts.jpg)
+
+He managed to get logged in but was hitting the 500 error when he tried to checkout.
+
+![Checkout error](documentation/screenshots/error-checkout.jpg)
+
+The app was working perfectly on my own machine. When i created another account to try and recreate the error, this worked perfectly too.
+Heroku logs were showing nothing to signify this issue.
+On looking at Elephant SQL i discovered that there were three loactaions where user information was saved;
+- User profiles
+- User
+- Email
+His email and username were saved and hence, he could log in, but i had previously flushed some of the tables and as such had lost his user profile.
+By flushing the whole DB i was able to clear out users and emails that no longer had associated user profiles, thus fixing this error. This was an interesting bug and not one that a new user would encounter, hence, i was not able to replicate it by creating a new user.
 
 There are hopefully no bugs present in the application now, if you happen to come across any, please email me at l.butler1993@gmail.com.
 
